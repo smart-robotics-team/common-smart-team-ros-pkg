@@ -116,16 +116,21 @@ include_directories(
 # )
 
 ## Declare a cpp executable
-# add_executable(common_smart_nav_node src/common_smart_nav_node.cpp)
+add_executable(pathplanner src/pathplanner.cpp)
+add_executable(pathwrapper src/pathplanner.cpp)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
-# add_dependencies(common_smart_nav_node common_smart_nav_generate_messages_cpp)
+add_dependencies(pathplanner common_smart_nav_generate_messages_cpp common_smart_nav_EXPORTED_TARGETS)
+add_dependencies(pathwrapper common_smart_nav_generate_messages_cpp common_smart_nav_EXPORTED_TARGETS)
 
 ## Specify libraries to link a library or executable target against
-# target_link_libraries(common_smart_nav_node
-#   ${catkin_LIBRARIES}
-# )
+target_link_libraries(pathplanner
+  ${catkin_LIBRARIES}
+)
+target_link_libraries(pathwrapper
+  ${catkin_LIBRARIES}
+)
 
 #############
 ## Install ##
