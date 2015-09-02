@@ -22,6 +22,14 @@ Node: common_odom_estimation
 <!--- protected region enable_beacon on begin -->
 <!--- protected region enable_beacon end -->
 
+**parent_link** *(string, default: map)*
+<!--- protected region parent_link on begin -->
+<!--- protected region parent_link end -->
+
+**child_link** *(string, default: base_link)*
+<!--- protected region child_link on begin -->
+<!--- protected region child_link end -->
+
 
 #### Published Topics
 

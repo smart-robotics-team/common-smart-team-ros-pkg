@@ -42,6 +42,8 @@ class common_odom_estimation_ros
         np_.param("enable_imu", component_config_.enable_imu, (int)0);
         np_.param("enable_fake", component_config_.enable_fake, (int)1);
         np_.param("enable_beacon", component_config_.enable_beacon, (int)0);
+        np_.param("parent_link", component_config_.parent_link, (std::string)"map");
+        np_.param("child_link", component_config_.child_link, (std::string)"base_link");
     }
     void topicCallback_imu(const sensor_msgs::Imu::ConstPtr& msg)
     {
@@ -61,6 +63,8 @@ class common_odom_estimation_ros
         component_config_.enable_imu = config.enable_imu;
         component_config_.enable_fake = config.enable_fake;
         component_config_.enable_beacon = config.enable_beacon;
+        component_config_.parent_link = config.parent_link;
+        component_config_.child_link = config.child_link;
         configure();
     }
 

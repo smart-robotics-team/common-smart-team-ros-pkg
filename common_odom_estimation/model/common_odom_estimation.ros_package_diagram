@@ -15,6 +15,14 @@
         <element xmi:type="ros:Parameter" href="common_odom_estimation.ros_package#//@node.0/@parameter.2"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_AscuEVGwEeWJ87ConHiITw"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_NypWAFG1EeW23IU4V6L0uw" type="3001">
+        <element xmi:type="ros:Parameter" href="common_odom_estimation.ros_package#//@node.0/@parameter.3"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_NypWAVG1EeW23IU4V6L0uw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_Rz7aIFG1EeW23IU4V6L0uw" type="3001">
+        <element xmi:type="ros:Parameter" href="common_odom_estimation.ros_package#//@node.0/@parameter.4"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Rz7aIVG1EeW23IU4V6L0uw"/>
+      </children>
       <styles xmi:type="notation:TitleStyle" xmi:id="_V2DaglGvEeWJ87ConHiITw" showTitle="true"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_V2Dag1GvEeWJ87ConHiITw"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_V2DahFGvEeWJ87ConHiITw"/>

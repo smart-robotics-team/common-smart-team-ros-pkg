@@ -5,6 +5,8 @@
 #include <geometry_msgs/Pose2D.h>
 
 /* protected region user include files on begin */
+#include <tf/transform_broadcaster.h>
+#include <geometry_msgs/PoseStamped.h>
 /* protected region user include files end */
 
 class common_odom_estimation_config
@@ -13,6 +15,8 @@ public:
     int enable_imu;
     int enable_fake;
     int enable_beacon;
+    std::string parent_link;
+    std::string child_link;
 };
 
 class common_odom_estimation_data
@@ -29,18 +33,64 @@ public:
 class common_odom_estimation_impl
 {
     /* protected region user member variables on begin */
+	bool enable_imu;
+	bool enable_fake;
+	bool enable_beacon;
+
+	tf::StampedTransform t;
+	tf::TransformBroadcaster broadcaster;
+
+	geometry_msgs::PoseStamped pose;
     /* protected region user member variables end */
 
 public:
     common_odom_estimation_impl() 
     {
         /* protected region user constructor on begin */
-        /* protected region user constructor end */
+    	enable_imu = false;
+    	enable_fake = false;
+    	enable_beacon = false;
+
+    	pose.pose.position.x = 0.0;
+    	pose.pose.position.y = 0.0;
+    	pose.pose.position.z = 0.0;
+
+    	pose.pose.orientation.x = 0.0;
+    	pose.pose.orientation.y = 0.0;
+    	pose.pose.orientation.z = 0.0;
+    	pose.pose.orientation.w = 1.0;
+    	/* protected region user constructor end */
     }
 
     void configure(common_odom_estimation_config config) 
     {
         /* protected region user configure on begin */
+    	if(config.enable_imu != 0)
+    	{
+    		enable_imu = true;
+    	}
+    	else
+    	{
+    		enable_imu = false;
+    	}
+
+    	if(config.enable_fake != 0)
+    	{
+    	    enable_fake = true;
+    	}
+    	else
+    	{
+    		enable_fake = false;
+    	}
+
+    	if(config.enable_beacon != 0)
+    	{
+    	    enable_beacon = true;
+    	}
+    	else
+    	{
+    		enable_beacon = false;
+    	}
         /* protected region user configure end */
     }
 
@@ -53,6 +103,26 @@ public:
     void topicCallback_imu(const sensor_msgs::Imu::ConstPtr& msg)
     {
         /* protected region user implementation of subscribe callback for imu on begin */
+    	if(enable_fake)
+    	{
+    		//pose.pose.position.x =
+
+    		pose.pose.orientation.x = msg->orientation.x;
+    		pose.pose.orientation.y = msg->orientation.y;
+    		pose.pose.orientation.z = msg->orientation.z;
+    		pose.pose.orientation.w = msg->orientation.w;
+    		/*
+    		t = tf::StampedTransform(tf::Transform(tf::createQuaternionFromYaw(z), tf::Vector3(0.0, 0.0, 0.0)),
+    		                                ros::Time::now(), "/petit_odom_link", "/petit_base_link");
+
+    		t.stamp_ = ros::Time::now();
+    		broadcaster.sendTransform(t);
+    		*/
+    	}
+    	else
+    	{
+
+    	}
         /* protected region user implementation of subscribe callback for imu end */
     }
     void topicCallback_cmd_vel(const geometry_msgs::Twist::ConstPtr& msg)
