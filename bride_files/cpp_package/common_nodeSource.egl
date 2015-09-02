@@ -1,5 +1,6 @@
 // ROS message includes
 #include "ros/ros.h"
+#include <tf/transform_listener.h>
 [%
 var str : String;
 for (publisher in node.publisher)
@@ -87,6 +88,7 @@ public:
 
 class [%=node.name.replace(" ", "_")%]_impl
 {
+    tf::TransformListener listener;
     [%=out.startPreserve("/*", "*/", "user member variables", true)%]
     [%=out.stopPreserve()%]
 

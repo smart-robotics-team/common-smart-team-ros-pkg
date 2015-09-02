@@ -1,5 +1,6 @@
 // ROS includes
 #include <ros/ros.h>
+#include <tf/transform_listener.h>
 [%if(node.actionserver.size() > 0){%]
 #include <actionlib/server/simple_action_server.h>
 [%}%]
@@ -97,8 +98,9 @@ class [%=node.name.replace(" ", "_")%]_ros
     [%=node.name.replace(" ", "_")%]_data component_data_;
     [%=node.name.replace(" ", "_")%]_config component_config_;
     [%=node.name.replace(" ", "_")%]_impl component_implementation_;
+    tf::TransformListener& tf_;
 
-    [%=node.name.replace(" ", "_")%]_ros() : np_("~")
+    [%=node.name.replace(" ", "_")%]_ros(tf::TransformListener& tf) : np_("~"), tf_(tf)
     [%
     for (action in node.actionserver) { %]
     , as_[%=action.name.replace(" ", "_")%]_(n_, "[%=action.name.replace(" ", "_")%]", boost::bind(&[%=node.name.replace(" ", "_")%]_impl::callback_[%=action.name.replace(" ", "_")%]_, &component_implementation_, _1, &as_[%=action.name.replace(" ", "_")%]_), false)
@@ -250,7 +252,8 @@ int main(int argc, char** argv)
 
     ros::init(argc, argv, "[%=node.name.replace(" ", "_")%]");
 
-    [%=node.name.replace(" ", "_")%]_ros node;
+    tf::TransformListener listener(ros::Duration(10));
+    [%=node.name.replace(" ", "_")%]_ros node(listener);
     node.configure();
 
     [% if(node.frequency == 0) {%] // if cycle time == 0 do a spin() here without calling node.update()
