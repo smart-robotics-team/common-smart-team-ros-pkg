@@ -85,7 +85,7 @@ int main(int argc, char** argv)
 
     ros::init(argc, argv, "common_odom_estimation");
 
-    common_odom_estimation_ros node();
+    common_odom_estimation_ros node;
     node.configure();
 
     ros::Rate loop_rate(50.0);
