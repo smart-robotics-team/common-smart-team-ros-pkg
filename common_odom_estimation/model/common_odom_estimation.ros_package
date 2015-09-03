@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ros:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ros="http://ros/1.0" name="common_odom_estimation" author="Joffrey Kriegel" author_email="kriegel.joffrey@gmail.com" description="The common_odom_estimation package that allows to compute a robot position in the field" license="GPLv3">
   <node name="common_odom_estimation" frequency="50.0">
+    <publisher name="odom_est" msg="nav_msgs::Odometry"/>
     <subscriber name="imu" msg="sensor_msgs::Imu"/>
     <subscriber name="cmd_vel" msg="geometry_msgs::Twist"/>
     <subscriber name="beacon" msg="geometry_msgs::Pose2D"/>
-    <parameter name="enable_imu" value="0"/>
-    <parameter name="enable_fake" value="1"/>
-    <parameter name="enable_beacon" value="0"/>
+    <subscriber name="init" msg="std_msgs::Empty"/>
+    <parameter name="enable_imu" type="bool" value="false"/>
+    <parameter name="enable_fake" type="bool" value="true"/>
+    <parameter name="enable_beacon" type="bool" value="false"/>
     <parameter name="parent_link" type="string" value="map"/>
     <parameter name="child_link" type="string" value="base_link"/>
+    <parameter name="poseX" type="double" value="0.0"/>
+    <parameter name="poseY" type="double" value="0.0"/>
+    <parameter name="theta" type="double" value="0.0"/>
   </node>
   <depend>std_msgs</depend>
   <depend>geometry_msgs</depend>
   <depend>sensor_msgs</depend>
+  <depend>nav_msgs</depend>
   <depend>tf</depend>
 </ros:Package>

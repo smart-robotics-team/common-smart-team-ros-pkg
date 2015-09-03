@@ -23,6 +23,18 @@
         <element xmi:type="ros:Parameter" href="common_odom_estimation.ros_package#//@node.0/@parameter.4"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_Rz7aIVG1EeW23IU4V6L0uw"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_gYea4FJ0EeW7aeFoUaIQZg" type="3001">
+        <element xmi:type="ros:Parameter" href="common_odom_estimation.ros_package#//@node.0/@parameter.5"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_gYea4VJ0EeW7aeFoUaIQZg"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_j_PtQFJ0EeW7aeFoUaIQZg" type="3001">
+        <element xmi:type="ros:Parameter" href="common_odom_estimation.ros_package#//@node.0/@parameter.6"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_j_PtQVJ0EeW7aeFoUaIQZg"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_mu2uIFJ0EeW7aeFoUaIQZg" type="3001">
+        <element xmi:type="ros:Parameter" href="common_odom_estimation.ros_package#//@node.0/@parameter.7"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_mu2uIVJ0EeW7aeFoUaIQZg"/>
+      </children>
       <styles xmi:type="notation:TitleStyle" xmi:id="_V2DaglGvEeWJ87ConHiITw" showTitle="true"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_V2Dag1GvEeWJ87ConHiITw"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_V2DahFGvEeWJ87ConHiITw"/>
@@ -39,14 +51,28 @@
       <styles xmi:type="notation:DescriptionStyle" xmi:id="_S6AqsVGwEeWJ87ConHiITw"/>
       <styles xmi:type="notation:FontStyle" xmi:id="_S6AqslGwEeWJ87ConHiITw" fontName="Ubuntu"/>
       <element xmi:type="ros:Subscriber" href="common_odom_estimation.ros_package#//@node.0/@subscriber.1"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_S6Aqs1GwEeWJ87ConHiITw"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_S6Aqs1GwEeWJ87ConHiITw" x="-79" y="120"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_XXI9UFGwEeWJ87ConHiITw" type="3007">
       <children xmi:type="notation:DecorationNode" xmi:id="_XXJkYFGwEeWJ87ConHiITw" type="5007"/>
       <styles xmi:type="notation:DescriptionStyle" xmi:id="_XXI9UVGwEeWJ87ConHiITw"/>
       <styles xmi:type="notation:FontStyle" xmi:id="_XXI9UlGwEeWJ87ConHiITw" fontName="Ubuntu"/>
       <element xmi:type="ros:Subscriber" href="common_odom_estimation.ros_package#//@node.0/@subscriber.2"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XXI9U1GwEeWJ87ConHiITw" x="-79" y="216"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XXI9U1GwEeWJ87ConHiITw" x="-79" y="168"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_dMEJQFJ0EeW7aeFoUaIQZg" type="3007">
+      <children xmi:type="notation:DecorationNode" xmi:id="_dMEwUFJ0EeW7aeFoUaIQZg" type="5007"/>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_dMEJQVJ0EeW7aeFoUaIQZg"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_dMEJQlJ0EeW7aeFoUaIQZg" fontName="Ubuntu"/>
+      <element xmi:type="ros:Subscriber" href="common_odom_estimation.ros_package#//@node.0/@subscriber.3"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dMEJQ1J0EeW7aeFoUaIQZg" x="-79" y="240"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_1vEvkFJ1EeW7aeFoUaIQZg" type="3004">
+      <children xmi:type="notation:DecorationNode" xmi:id="_1vEvlFJ1EeW7aeFoUaIQZg" type="5004"/>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_1vEvkVJ1EeW7aeFoUaIQZg"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_1vEvklJ1EeW7aeFoUaIQZg" fontName="Ubuntu"/>
+      <element xmi:type="ros:Publisher" href="common_odom_estimation.ros_package#//@node.0/@publisher.0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1vEvk1J1EeW7aeFoUaIQZg"/>
     </children>
     <element xmi:type="ros:Node" href="common_odom_estimation.ros_package#//@node.0"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_V2CzcVGvEeWJ87ConHiITw" x="288" y="60" width="445" height="289"/>
