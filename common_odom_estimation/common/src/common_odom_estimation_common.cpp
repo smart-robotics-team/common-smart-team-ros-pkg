@@ -47,6 +47,12 @@ class common_odom_estimation_impl
 	tf::TransformBroadcaster broadcaster;
 
 	geometry_msgs::Pose2D estimated_pose;
+	geometry_msgs::Twist last_cmd_vel;
+
+	ros::Time last_beacon;
+	ros::Time last_imu;
+
+	double integral_imu_x;
     /* protected region user member variables end */
 
 public:
@@ -56,6 +62,11 @@ public:
     	estimated_pose.x = 0.0;
     	estimated_pose.y = 0.0;
     	estimated_pose.theta = 0.0;
+
+    	last_beacon = ros::Time::now();
+    	last_imu = ros::Time::now();
+
+    	integral_imu_x = 0.0;
     	/* protected region user constructor end */
     }
 
@@ -92,24 +103,68 @@ public:
         /* protected region user implementation of subscribe callback for imu on begin */
     	if(localconfig.enable_fake)
     	{
+    		if(localconfig.enable_beacon)
+			{
+				if(last_beacon.toSec() > 0.2)
+				{
+					if(fabs(last_cmd_vel.linear.x) > 0.01 )
+					{
+						integral_imu_x = integral_imu_x + msg->linear_acceleration.x * (ros::Time::now().toSec() - last_imu.toSec());
+						estimated_pose.x = estimated_pose.x + integral_imu_x * cos(estimated_pose.theta);
+						estimated_pose.y = estimated_pose.y + integral_imu_x * sin(estimated_pose.theta);
+					}
+					else
+					{
+						// Don't compute
+						integral_imu_x = 0.0;
+					}
+				}
+				else
+				{
+					// Don't compute
+				}
+			}
+    		else
+    		{
 
+    		}
 
     	}
     	else
     	{
+    		if(localconfig.enable_beacon)
+			{
+				if(last_beacon.toSec() > 0.2)
+				{
 
+				}
+				else
+				{
+					// Don't compute
+				}
+			}
+			else
+			{
+
+			}
     	}
+    	estimated_pose.theta = tf::getYaw(msg->orientation);
+    	last_imu = ros::Time::now();
         /* protected region user implementation of subscribe callback for imu end */
     }
     void topicCallback_cmd_vel(const geometry_msgs::Twist::ConstPtr& msg)
     {
         /* protected region user implementation of subscribe callback for cmd_vel on begin */
+    	last_cmd_vel = *msg;
         /* protected region user implementation of subscribe callback for cmd_vel end */
     }
     void topicCallback_beacon(const geometry_msgs::Pose2D::ConstPtr& msg)
     {
         /* protected region user implementation of subscribe callback for beacon on begin */
-        /* protected region user implementation of subscribe callback for beacon end */
+    	last_beacon = ros::Time::now();
+    	estimated_pose.x = msg->x;
+    	estimated_pose.y = msg->y;
+    	/* protected region user implementation of subscribe callback for beacon end */
     }
     void topicCallback_init(const std_msgs::Empty::ConstPtr& msg)
     {
