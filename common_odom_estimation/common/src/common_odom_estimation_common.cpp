@@ -105,7 +105,7 @@ public:
     	{
     		if(localconfig.enable_beacon)
 			{
-				if(last_beacon.toSec() > 0.2)
+				if(last_beacon.toSec() > 0.05)
 				{
 					if(fabs(last_cmd_vel.linear.x) > 0.01 )
 					{
@@ -134,7 +134,7 @@ public:
     	{
     		if(localconfig.enable_beacon)
 			{
-				if(last_beacon.toSec() > 0.2)
+				if(last_beacon.toSec() > 0.05)
 				{
 
 				}

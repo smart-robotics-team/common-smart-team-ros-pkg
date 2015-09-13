@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ros:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ros="http://ros/1.0" name="common_servo_converter" author="Joffrey Kriegel" author_email="kriegel.joffrey@gmail.com" description="The common_servo_converter package usefull to drive a servo which can have an offset or be inverted" license="GPLv3" url="">
+  <node name="common_servo_converter" frequency="20.0">
+    <publisher name="output" msg="std_msgs::UInt16"/>
+    <subscriber name="input" msg="std_msgs::UInt16"/>
+    <parameter name="inverted" value="0"/>
+    <parameter name="offset" value="0"/>
+  </node>
+  <depend>std_msgs</depend>
+</ros:Package>

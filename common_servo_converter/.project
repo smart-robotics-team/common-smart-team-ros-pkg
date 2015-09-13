@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>common_odom_estimation@bride</name>
+	<name>common_servo_converter@bride</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -47,7 +47,7 @@
 				</dictionary>
 				<dictionary>
 					<key>org.eclipse.cdt.make.core.buildLocation</key>
-					<value>/home/viki/catkin_ws/src/common-smart-team-ros-pkg/common_odom_estimation/bride</value>
+					<value>/home/viki/catkin_ws/src/common-smart-team-ros-pkg/common_servo_converter/bride</value>
 				</dictionary>
 				<dictionary>
 					<key>org.eclipse.cdt.make.core.useDefaultBuildCmd</key>
@@ -83,7 +83,7 @@
 				</dictionary>
 				<dictionary>
 					<key>org.eclipse.cdt.make.core.build.location</key>
-					<value>/home/viki/catkin_ws/src/common-smart-team-ros-pkg/common_odom_estimation/bride</value>
+					<value>/home/viki/catkin_ws/src/common-smart-team-ros-pkg/common_servo_converter/bride</value>
 				</dictionary>
 				<dictionary>
 					<key>org.eclipse.cdt.make.core.autoBuildTarget</key>
@@ -124,37 +124,37 @@
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>[Targets]/[exe] common_odom_estimation</name>
+			<name>[Targets]/[exe] common_servo_converter</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>[Targets]/[exe] common_odom_estimation/</name>
+			<name>[Targets]/[exe] common_servo_converter/</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>[Targets]/[exe] common_odom_estimation/Source Files</name>
+			<name>[Targets]/[exe] common_servo_converter/Source Files</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>[Targets]/[exe] common_odom_estimation/Source Files/common_odom_estimation_ros.cpp</name>
+			<name>[Targets]/[exe] common_servo_converter/Source Files/common_servo_converter_ros.cpp</name>
 			<type>1</type>
-			<location>/home/viki/catkin_ws/src/common-smart-team-ros-pkg/common_odom_estimation/ros/src/common_odom_estimation_ros.cpp</location>
+			<location>/home/viki/catkin_ws/src/common-smart-team-ros-pkg/common_servo_converter/ros/src/common_servo_converter_ros.cpp</location>
 		</link>
 		<link>
-			<name>[Targets]/[exe] common_odom_estimation/Header Files</name>
+			<name>[Targets]/[exe] common_servo_converter/Header Files</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>[Targets]/[exe] common_odom_estimation/CMake Rules</name>
+			<name>[Targets]/[exe] common_servo_converter/CMake Rules</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>[Targets]/[exe] common_odom_estimation/Resources</name>
+			<name>[Targets]/[exe] common_servo_converter/Resources</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>

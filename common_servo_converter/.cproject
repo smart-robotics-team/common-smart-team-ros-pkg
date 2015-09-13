@@ -20,7 +20,7 @@
 <storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
 <storageModule moduleId="org.eclipse.cdt.core.pathentry">
 <pathentry excluding="**/CMakeFiles/" kind="out" path=""/>
-<pathentry kind="mac" name="ROS_PACKAGE_NAME" path="" value="&quot;common_odom_estimation&quot;"/>
+<pathentry kind="mac" name="ROS_PACKAGE_NAME" path="" value="&quot;common_servo_converter&quot;"/>
 <pathentry kind="mac" name="ROSCONSOLE_BACKEND_LOG4CXX" path="" value=""/>
 <pathentry kind="mac" name="__STDC__" path="" value="1"/>
 <pathentry kind="mac" name="__STDC_HOSTED__" path="" value="1"/>
@@ -236,9 +236,9 @@
 <pathentry kind="mac" name="__GXX_RTTI" path="" value="1"/>
 <pathentry kind="mac" name="__EXCEPTIONS" path="" value="1"/>
 <pathentry kind="mac" name="_GNU_SOURCE" path="" value="1"/>
-<pathentry include="/home/viki/catkin_ws/src/common-smart-team-ros-pkg/common_odom_estimation/bride/devel/include" kind="inc" path="" system="true"/>
-<pathentry include="/home/viki/catkin_ws/src/common-smart-team-ros-pkg/common_odom_estimation/common/include" kind="inc" path="" system="true"/>
-<pathentry include="/home/viki/catkin_ws/src/common-smart-team-ros-pkg/common_odom_estimation/common/src" kind="inc" path="" system="true"/>
+<pathentry include="/home/viki/catkin_ws/src/common-smart-team-ros-pkg/common_servo_converter/bride/devel/include" kind="inc" path="" system="true"/>
+<pathentry include="/home/viki/catkin_ws/src/common-smart-team-ros-pkg/common_servo_converter/common/include" kind="inc" path="" system="true"/>
+<pathentry include="/home/viki/catkin_ws/src/common-smart-team-ros-pkg/common_servo_converter/common/src" kind="inc" path="" system="true"/>
 <pathentry include="/opt/ros/hydro/include" kind="inc" path="" system="true"/>
 <pathentry include="/usr/include" kind="inc" path="" system="true"/>
 <pathentry include="/usr/src/gtest/include" kind="inc" path="" system="true"/>
@@ -254,48 +254,6 @@
 </storageModule>
 <storageModule moduleId="org.eclipse.cdt.make.core.buildtargets">
 <buildTargets>
-<target name=": actionlib_generate_messages_cpp" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
-<buildCommand>catmake</buildCommand>
-<buildArguments>-j8</buildArguments>
-<buildTarget>actionlib_generate_messages_cpp</buildTarget>
-<stopOnError>true</stopOnError>
-<useDefaultCommand>false</useDefaultCommand>
-</target>
-<target name=": actionlib_generate_messages_lisp" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
-<buildCommand>catmake</buildCommand>
-<buildArguments>-j8</buildArguments>
-<buildTarget>actionlib_generate_messages_lisp</buildTarget>
-<stopOnError>true</stopOnError>
-<useDefaultCommand>false</useDefaultCommand>
-</target>
-<target name=": actionlib_generate_messages_py" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
-<buildCommand>catmake</buildCommand>
-<buildArguments>-j8</buildArguments>
-<buildTarget>actionlib_generate_messages_py</buildTarget>
-<stopOnError>true</stopOnError>
-<useDefaultCommand>false</useDefaultCommand>
-</target>
-<target name=": actionlib_msgs_generate_messages_cpp" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
-<buildCommand>catmake</buildCommand>
-<buildArguments>-j8</buildArguments>
-<buildTarget>actionlib_msgs_generate_messages_cpp</buildTarget>
-<stopOnError>true</stopOnError>
-<useDefaultCommand>false</useDefaultCommand>
-</target>
-<target name=": actionlib_msgs_generate_messages_lisp" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
-<buildCommand>catmake</buildCommand>
-<buildArguments>-j8</buildArguments>
-<buildTarget>actionlib_msgs_generate_messages_lisp</buildTarget>
-<stopOnError>true</stopOnError>
-<useDefaultCommand>false</useDefaultCommand>
-</target>
-<target name=": actionlib_msgs_generate_messages_py" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
-<buildCommand>catmake</buildCommand>
-<buildArguments>-j8</buildArguments>
-<buildTarget>actionlib_msgs_generate_messages_py</buildTarget>
-<stopOnError>true</stopOnError>
-<useDefaultCommand>false</useDefaultCommand>
-</target>
 <target name=": clean_test_results" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
 <buildCommand>catmake</buildCommand>
 <buildArguments>-j8</buildArguments>
@@ -303,38 +261,38 @@
 <stopOnError>true</stopOnError>
 <useDefaultCommand>false</useDefaultCommand>
 </target>
-<target name="[exe] common_odom_estimation" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<target name="[exe] common_servo_converter" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
 <buildCommand>catmake</buildCommand>
 <buildArguments>-j8</buildArguments>
-<buildTarget>common_odom_estimation</buildTarget>
+<buildTarget>common_servo_converter</buildTarget>
 <stopOnError>true</stopOnError>
 <useDefaultCommand>false</useDefaultCommand>
 </target>
-<target name="[exe] common_odom_estimation/fast" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<target name="[exe] common_servo_converter/fast" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
 <buildCommand>catmake</buildCommand>
 <buildArguments>-j8</buildArguments>
-<buildTarget>common_odom_estimation/fast</buildTarget>
+<buildTarget>common_servo_converter/fast</buildTarget>
 <stopOnError>true</stopOnError>
 <useDefaultCommand>false</useDefaultCommand>
 </target>
-<target name="Build" path="[Targets]/[exe] common_odom_estimation" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<target name="Build" path="[Targets]/[exe] common_servo_converter" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
 <buildCommand>catmake</buildCommand>
-<buildArguments>-C "/home/viki/catkin_ws/src/common-smart-team-ros-pkg/common_odom_estimation/bride" -j8</buildArguments>
-<buildTarget>common_odom_estimation</buildTarget>
+<buildArguments>-C "/home/viki/catkin_ws/src/common-smart-team-ros-pkg/common_servo_converter/bride" -j8</buildArguments>
+<buildTarget>common_servo_converter</buildTarget>
 <stopOnError>true</stopOnError>
 <useDefaultCommand>false</useDefaultCommand>
 </target>
-<target name="Clean" path="[Targets]/[exe] common_odom_estimation" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<target name="Clean" path="[Targets]/[exe] common_servo_converter" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
 <buildCommand>/usr/bin/cmake</buildCommand>
-<buildArguments>-E chdir "/home/viki/catkin_ws/src/common-smart-team-ros-pkg/common_odom_estimation/bride" "/usr/bin/cmake" -P "CMakeFiles/common_odom_estimation.dir/cmake_clean.cmake"</buildArguments>
+<buildArguments>-E chdir "/home/viki/catkin_ws/src/common-smart-team-ros-pkg/common_servo_converter/bride" "/usr/bin/cmake" -P "CMakeFiles/common_servo_converter.dir/cmake_clean.cmake"</buildArguments>
 <buildTarget></buildTarget>
 <stopOnError>true</stopOnError>
 <useDefaultCommand>false</useDefaultCommand>
 </target>
-<target name=": common_odom_estimation_gencfg" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<target name=": common_servo_converter_gencfg" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
 <buildCommand>catmake</buildCommand>
 <buildArguments>-j8</buildArguments>
-<buildTarget>common_odom_estimation_gencfg</buildTarget>
+<buildTarget>common_servo_converter_gencfg</buildTarget>
 <stopOnError>true</stopOnError>
 <useDefaultCommand>false</useDefaultCommand>
 </target>
@@ -373,27 +331,6 @@
 <stopOnError>true</stopOnError>
 <useDefaultCommand>false</useDefaultCommand>
 </target>
-<target name=": geometry_msgs_generate_messages_cpp" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
-<buildCommand>catmake</buildCommand>
-<buildArguments>-j8</buildArguments>
-<buildTarget>geometry_msgs_generate_messages_cpp</buildTarget>
-<stopOnError>true</stopOnError>
-<useDefaultCommand>false</useDefaultCommand>
-</target>
-<target name=": geometry_msgs_generate_messages_lisp" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
-<buildCommand>catmake</buildCommand>
-<buildArguments>-j8</buildArguments>
-<buildTarget>geometry_msgs_generate_messages_lisp</buildTarget>
-<stopOnError>true</stopOnError>
-<useDefaultCommand>false</useDefaultCommand>
-</target>
-<target name=": geometry_msgs_generate_messages_py" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
-<buildCommand>catmake</buildCommand>
-<buildArguments>-j8</buildArguments>
-<buildTarget>geometry_msgs_generate_messages_py</buildTarget>
-<stopOnError>true</stopOnError>
-<useDefaultCommand>false</useDefaultCommand>
-</target>
 <target name=": install" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
 <buildCommand>catmake</buildCommand>
 <buildArguments>-j8</buildArguments>
@@ -419,27 +356,6 @@
 <buildCommand>catmake</buildCommand>
 <buildArguments>-j8</buildArguments>
 <buildTarget>list_install_components</buildTarget>
-<stopOnError>true</stopOnError>
-<useDefaultCommand>false</useDefaultCommand>
-</target>
-<target name=": nav_msgs_generate_messages_cpp" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
-<buildCommand>catmake</buildCommand>
-<buildArguments>-j8</buildArguments>
-<buildTarget>nav_msgs_generate_messages_cpp</buildTarget>
-<stopOnError>true</stopOnError>
-<useDefaultCommand>false</useDefaultCommand>
-</target>
-<target name=": nav_msgs_generate_messages_lisp" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
-<buildCommand>catmake</buildCommand>
-<buildArguments>-j8</buildArguments>
-<buildTarget>nav_msgs_generate_messages_lisp</buildTarget>
-<stopOnError>true</stopOnError>
-<useDefaultCommand>false</useDefaultCommand>
-</target>
-<target name=": nav_msgs_generate_messages_py" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
-<buildCommand>catmake</buildCommand>
-<buildArguments>-j8</buildArguments>
-<buildTarget>nav_msgs_generate_messages_py</buildTarget>
 <stopOnError>true</stopOnError>
 <useDefaultCommand>false</useDefaultCommand>
 </target>
@@ -499,27 +415,6 @@
 <stopOnError>true</stopOnError>
 <useDefaultCommand>false</useDefaultCommand>
 </target>
-<target name=": sensor_msgs_generate_messages_cpp" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
-<buildCommand>catmake</buildCommand>
-<buildArguments>-j8</buildArguments>
-<buildTarget>sensor_msgs_generate_messages_cpp</buildTarget>
-<stopOnError>true</stopOnError>
-<useDefaultCommand>false</useDefaultCommand>
-</target>
-<target name=": sensor_msgs_generate_messages_lisp" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
-<buildCommand>catmake</buildCommand>
-<buildArguments>-j8</buildArguments>
-<buildTarget>sensor_msgs_generate_messages_lisp</buildTarget>
-<stopOnError>true</stopOnError>
-<useDefaultCommand>false</useDefaultCommand>
-</target>
-<target name=": sensor_msgs_generate_messages_py" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
-<buildCommand>catmake</buildCommand>
-<buildArguments>-j8</buildArguments>
-<buildTarget>sensor_msgs_generate_messages_py</buildTarget>
-<stopOnError>true</stopOnError>
-<useDefaultCommand>false</useDefaultCommand>
-</target>
 <target name=": std_msgs_generate_messages_cpp" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
 <buildCommand>catmake</buildCommand>
 <buildArguments>-j8</buildArguments>
@@ -555,48 +450,6 @@
 <stopOnError>true</stopOnError>
 <useDefaultCommand>false</useDefaultCommand>
 </target>
-<target name=": tf2_msgs_generate_messages_cpp" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
-<buildCommand>catmake</buildCommand>
-<buildArguments>-j8</buildArguments>
-<buildTarget>tf2_msgs_generate_messages_cpp</buildTarget>
-<stopOnError>true</stopOnError>
-<useDefaultCommand>false</useDefaultCommand>
-</target>
-<target name=": tf2_msgs_generate_messages_lisp" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
-<buildCommand>catmake</buildCommand>
-<buildArguments>-j8</buildArguments>
-<buildTarget>tf2_msgs_generate_messages_lisp</buildTarget>
-<stopOnError>true</stopOnError>
-<useDefaultCommand>false</useDefaultCommand>
-</target>
-<target name=": tf2_msgs_generate_messages_py" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
-<buildCommand>catmake</buildCommand>
-<buildArguments>-j8</buildArguments>
-<buildTarget>tf2_msgs_generate_messages_py</buildTarget>
-<stopOnError>true</stopOnError>
-<useDefaultCommand>false</useDefaultCommand>
-</target>
-<target name=": tf_generate_messages_cpp" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
-<buildCommand>catmake</buildCommand>
-<buildArguments>-j8</buildArguments>
-<buildTarget>tf_generate_messages_cpp</buildTarget>
-<stopOnError>true</stopOnError>
-<useDefaultCommand>false</useDefaultCommand>
-</target>
-<target name=": tf_generate_messages_lisp" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
-<buildCommand>catmake</buildCommand>
-<buildArguments>-j8</buildArguments>
-<buildTarget>tf_generate_messages_lisp</buildTarget>
-<stopOnError>true</stopOnError>
-<useDefaultCommand>false</useDefaultCommand>
-</target>
-<target name=": tf_generate_messages_py" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
-<buildCommand>catmake</buildCommand>
-<buildArguments>-j8</buildArguments>
-<buildTarget>tf_generate_messages_py</buildTarget>
-<stopOnError>true</stopOnError>
-<useDefaultCommand>false</useDefaultCommand>
-</target>
 <target name=": all" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
 <buildCommand>catmake</buildCommand>
 <buildArguments>-j8</buildArguments>
@@ -611,24 +464,24 @@
 <stopOnError>true</stopOnError>
 <useDefaultCommand>false</useDefaultCommand>
 </target>
-<target name="[obj] ros/src/common_odom_estimation_ros.cpp.o" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<target name="[obj] ros/src/common_servo_converter_ros.cpp.o" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
 <buildCommand>catmake</buildCommand>
 <buildArguments>-j8</buildArguments>
-<buildTarget>ros/src/common_odom_estimation_ros.cpp.o</buildTarget>
+<buildTarget>ros/src/common_servo_converter_ros.cpp.o</buildTarget>
 <stopOnError>true</stopOnError>
 <useDefaultCommand>false</useDefaultCommand>
 </target>
-<target name="[pre] ros/src/common_odom_estimation_ros.cpp.i" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<target name="[pre] ros/src/common_servo_converter_ros.cpp.i" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
 <buildCommand>catmake</buildCommand>
 <buildArguments>-j8</buildArguments>
-<buildTarget>ros/src/common_odom_estimation_ros.cpp.i</buildTarget>
+<buildTarget>ros/src/common_servo_converter_ros.cpp.i</buildTarget>
 <stopOnError>true</stopOnError>
 <useDefaultCommand>false</useDefaultCommand>
 </target>
-<target name="[to asm] ros/src/common_odom_estimation_ros.cpp.s" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<target name="[to asm] ros/src/common_servo_converter_ros.cpp.s" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
 <buildCommand>catmake</buildCommand>
 <buildArguments>-j8</buildArguments>
-<buildTarget>ros/src/common_odom_estimation_ros.cpp.s</buildTarget>
+<buildTarget>ros/src/common_servo_converter_ros.cpp.s</buildTarget>
 <stopOnError>true</stopOnError>
 <useDefaultCommand>false</useDefaultCommand>
 </target>
@@ -648,14 +501,14 @@
 </target>
 <target name="Build" path="[Targets]/[lib] gtest" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
 <buildCommand>catmake</buildCommand>
-<buildArguments>-C "/home/viki/catkin_ws/src/common-smart-team-ros-pkg/common_odom_estimation/bride" -j8</buildArguments>
+<buildArguments>-C "/home/viki/catkin_ws/src/common-smart-team-ros-pkg/common_servo_converter/bride" -j8</buildArguments>
 <buildTarget>gtest</buildTarget>
 <stopOnError>true</stopOnError>
 <useDefaultCommand>false</useDefaultCommand>
 </target>
 <target name="Clean" path="[Targets]/[lib] gtest" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
 <buildCommand>/usr/bin/cmake</buildCommand>
-<buildArguments>-E chdir "/home/viki/catkin_ws/src/common-smart-team-ros-pkg/common_odom_estimation/bride/gtest" "/usr/bin/cmake" -P "CMakeFiles/gtest.dir/cmake_clean.cmake"</buildArguments>
+<buildArguments>-E chdir "/home/viki/catkin_ws/src/common-smart-team-ros-pkg/common_servo_converter/bride/gtest" "/usr/bin/cmake" -P "CMakeFiles/gtest.dir/cmake_clean.cmake"</buildArguments>
 <buildTarget></buildTarget>
 <stopOnError>true</stopOnError>
 <useDefaultCommand>false</useDefaultCommand>
@@ -676,14 +529,14 @@
 </target>
 <target name="Build" path="[Targets]/[lib] gtest_main" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
 <buildCommand>catmake</buildCommand>
-<buildArguments>-C "/home/viki/catkin_ws/src/common-smart-team-ros-pkg/common_odom_estimation/bride" -j8</buildArguments>
+<buildArguments>-C "/home/viki/catkin_ws/src/common-smart-team-ros-pkg/common_servo_converter/bride" -j8</buildArguments>
 <buildTarget>gtest_main</buildTarget>
 <stopOnError>true</stopOnError>
 <useDefaultCommand>false</useDefaultCommand>
 </target>
 <target name="Clean" path="[Targets]/[lib] gtest_main" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
 <buildCommand>/usr/bin/cmake</buildCommand>
-<buildArguments>-E chdir "/home/viki/catkin_ws/src/common-smart-team-ros-pkg/common_odom_estimation/bride/gtest" "/usr/bin/cmake" -P "CMakeFiles/gtest_main.dir/cmake_clean.cmake"</buildArguments>
+<buildArguments>-E chdir "/home/viki/catkin_ws/src/common-smart-team-ros-pkg/common_servo_converter/bride/gtest" "/usr/bin/cmake" -P "CMakeFiles/gtest_main.dir/cmake_clean.cmake"</buildArguments>
 <buildTarget></buildTarget>
 <stopOnError>true</stopOnError>
 <useDefaultCommand>false</useDefaultCommand>
@@ -772,6 +625,6 @@
 </cconfiguration>
 </storageModule>
 <storageModule moduleId="cdtBuildSystem" version="4.0.0">
-<project id="common_odom_estimation.null.1" name="common_odom_estimation"/>
+<project id="common_servo_converter.null.1" name="common_servo_converter"/>
 </storageModule>
 </cproject>
