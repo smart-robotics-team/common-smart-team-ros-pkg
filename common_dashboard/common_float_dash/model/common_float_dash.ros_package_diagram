@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:ros="http://ros/1.0" xmi:id="_89FZsGQhEeW_vLO3aq2rFA" type="RosPackage" name="common_float_dash.ros_package_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_96XhUGQhEeW_vLO3aq2rFA" type="2001" fontName="Ubuntu">
+    <children xmi:type="notation:DecorationNode" xmi:id="_96Z9kGQhEeW_vLO3aq2rFA" type="5008"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_96bywGQhEeW_vLO3aq2rFA" type="7001">
+      <children xmi:type="notation:Node" xmi:id="_P2UJgGQiEeW_vLO3aq2rFA" type="3001">
+        <element xmi:type="ros:Parameter" href="common_float_dash.ros_package#//@node.0/@parameter.0"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_P2UJgWQiEeW_vLO3aq2rFA"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_X809oGQiEeW_vLO3aq2rFA" type="3001">
+        <element xmi:type="ros:Parameter" href="common_float_dash.ros_package#//@node.0/@parameter.1"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_X809oWQiEeW_vLO3aq2rFA"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_aV8xIGQiEeW_vLO3aq2rFA" type="3001">
+        <element xmi:type="ros:Parameter" href="common_float_dash.ros_package#//@node.0/@parameter.2"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_aV8xIWQiEeW_vLO3aq2rFA"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_gt81AGQiEeW_vLO3aq2rFA" type="3001">
+        <element xmi:type="ros:Parameter" href="common_float_dash.ros_package#//@node.0/@parameter.3"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_gt81AWQiEeW_vLO3aq2rFA"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_kexbQGQiEeW_vLO3aq2rFA" type="3001">
+        <element xmi:type="ros:Parameter" href="common_float_dash.ros_package#//@node.0/@parameter.4"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_kexbQWQiEeW_vLO3aq2rFA"/>
+      </children>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_96bywWQhEeW_vLO3aq2rFA" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_96bywmQhEeW_vLO3aq2rFA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_96byw2QhEeW_vLO3aq2rFA"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="__c6SIGQhEeW_vLO3aq2rFA" type="3007">
+      <children xmi:type="notation:DecorationNode" xmi:id="__c6SJGQhEeW_vLO3aq2rFA" type="5007"/>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="__c6SIWQhEeW_vLO3aq2rFA"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="__c6SImQhEeW_vLO3aq2rFA" fontName="Ubuntu"/>
+      <element xmi:type="ros:Subscriber" href="common_float_dash.ros_package#//@node.0/@subscriber.0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="__c6SI2QhEeW_vLO3aq2rFA"/>
+    </children>
+    <element xmi:type="ros:Node" href="common_float_dash.ros_package#//@node.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_96YIYGQhEeW_vLO3aq2rFA" x="336" y="108" width="361" height="241"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_89FZsWQhEeW_vLO3aq2rFA"/>
+  <element xmi:type="ros:Package" href="common_float_dash.ros_package#/"/>
+</notation:Diagram>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ros:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ros="http://ros/1.0" name="common_string_dash" author="Joffrey Kriegel" author_email="kriegel.joffrey@gmail.com" description="The common_string_dash package" license="GPLv3">
+  <node name="common_string_dash" frequency="0.5">
+    <subscriber name="input" msg="std_msgs::String"/>
+    <parameter name="address" type="string" value="192.168.0.1"/>
+    <parameter name="port" type="string" value="3030"/>
+    <parameter name="type" type="string" value="text"/>
+    <parameter name="auth" type="string" value="YOUR_AUTH_TOKEN"/>
+    <parameter name="dash_topic" type="string" value="welcome"/>
+  </node>
+  <depend>std_msgs</depend>
+</ros:Package>
