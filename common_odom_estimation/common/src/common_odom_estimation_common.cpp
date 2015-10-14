@@ -90,14 +90,15 @@ public:
 
         if(localconfig.enable_fake && localconfig.enable_beacon && localconfig.enable_imu)
         {
-		if(last_beacon_time.toSec() > 0.05)
+		if(last_beacon_time.toSec() > 0.1)
 		{
 			if(fabs(last_cmd_vel.linear.x) > 0.01 )
 			{
 				double dt = ros::Time::now().toSec() - data.out_odom_est.header.stamp.toSec();
-				estimated_pose.x += ( (integral_imu_x * cos(estimated_pose.theta) + integral_imu_y * sin(estimated_pose.theta)) * dt);
-				estimated_pose.y += ( (integral_imu_y * cos(estimated_pose.theta) + integral_imu_x * sin(estimated_pose.theta)) * dt);
-				estimated_pose.theta += ( last_imu.angular_velocity.z * dt );
+				//estimated_pose.x += ( (integral_imu_x * cos(estimated_pose.theta) + integral_imu_y * sin(estimated_pose.theta)) * dt);
+				//estimated_pose.y += ( (integral_imu_y * cos(estimated_pose.theta) + integral_imu_x * sin(estimated_pose.theta)) * dt);
+                                estimated_pose.x += ( (last_cmd_vel.linear.x * cos(estimated_pose.theta) + last_cmd_vel.linear.y * sin(estimated_pose.theta)) * dt);
+                                estimated_pose.y += ( (last_cmd_vel.linear.y * cos(estimated_pose.theta) + last_cmd_vel.linear.x * sin(estimated_pose.theta)) * dt);
 			}
 		}
 	}
@@ -105,7 +106,7 @@ public:
 	if(localconfig.enable_fake && localconfig.enable_beacon && !localconfig.enable_imu)
         {
         	double dt = ros::Time::now().toSec() - data.out_odom_est.header.stamp.toSec();
-	        if(last_beacon_time.toSec() > 0.05) 
+	        if(last_beacon_time.toSec() > 0.1) 
                 {       
                         if(fabs(last_cmd_vel.linear.x) > 0.01 || fabs(last_cmd_vel.linear.y) > 0.01 )
                         {       
@@ -127,7 +128,7 @@ public:
 	broadcaster.sendTransform(t);
 
 	data.out_odom_est.child_frame_id = localconfig.child_link;
-	data.out_odom_est.header.frame_id = localconfig.child_link;
+	data.out_odom_est.header.frame_id = localconfig.parent_link;
 	data.out_odom_est.header.stamp = ros::Time::now();
 
 	data.out_odom_est.pose.pose.position.x = estimated_pose.x;
@@ -160,10 +161,11 @@ public:
 		// Don't compute
 	}
 
-	std::cout << "IMU x speed : " << integral_imu_x << "   " << integral_imu_y << std::endl;
+	//std::cout << "IMU x speed : " << integral_imu_x << "   " << integral_imu_y << std::endl;
 
     	estimated_pose.theta = tf::getYaw(msg->orientation) - offset_theta;
     	last_imu_time = ros::Time::now();
+	last_imu = *msg;
         /* protected region user implementation of subscribe callback for imu end */
     }
     void topicCallback_cmd_vel(const geometry_msgs::Twist::ConstPtr& msg)
@@ -185,6 +187,8 @@ public:
         /* protected region user implementation of subscribe callback for init on begin */
     	
 	offset_theta = tf::getYaw(last_imu.orientation);
+
+	std::cout << "offset : " << offset_theta << "   " << tf::getYaw(last_imu.orientation) << std::endl;
 
 	estimated_pose.x = localconfig.poseX;
 	estimated_pose.y = localconfig.poseY;
