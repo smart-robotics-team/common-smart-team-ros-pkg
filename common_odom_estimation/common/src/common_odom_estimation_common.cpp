@@ -90,17 +90,17 @@ public:
 
         if(localconfig.enable_fake && localconfig.enable_beacon && localconfig.enable_imu)
         {
-		if(last_beacon_time.toSec() > 0.1)
-		{
-			if(fabs(last_cmd_vel.linear.x) > 0.01 )
+		//if(last_beacon_time.toSec() > 0.1)
+		//{
+			if(fabs(last_cmd_vel.linear.x) > 0.01 || fabs(last_cmd_vel.linear.y) > 0.01)
 			{
 				double dt = ros::Time::now().toSec() - data.out_odom_est.header.stamp.toSec();
 				//estimated_pose.x += ( (integral_imu_x * cos(estimated_pose.theta) + integral_imu_y * sin(estimated_pose.theta)) * dt);
 				//estimated_pose.y += ( (integral_imu_y * cos(estimated_pose.theta) + integral_imu_x * sin(estimated_pose.theta)) * dt);
-                                estimated_pose.x += ( (last_cmd_vel.linear.x * cos(estimated_pose.theta) + last_cmd_vel.linear.y * sin(estimated_pose.theta)) * dt);
-                                estimated_pose.y += ( (last_cmd_vel.linear.y * cos(estimated_pose.theta) + last_cmd_vel.linear.x * sin(estimated_pose.theta)) * dt);
+                                estimated_pose.x += ( (last_cmd_vel.linear.x * cos(estimated_pose.theta) - last_cmd_vel.linear.y * sin(estimated_pose.theta)) * dt);
+                                estimated_pose.y += ( -(last_cmd_vel.linear.y * cos(estimated_pose.theta) + last_cmd_vel.linear.x * sin(estimated_pose.theta)) * dt);
 			}
-		}
+		//}
 	}
 
 	if(localconfig.enable_fake && localconfig.enable_beacon && !localconfig.enable_imu)
