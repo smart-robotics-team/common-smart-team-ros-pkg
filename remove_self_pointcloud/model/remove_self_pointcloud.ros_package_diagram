@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:ros="http://ros/1.0" xmi:id="_dHZp4KDPEeWs9KzTQVqeBQ" type="RosPackage" name="remove_self_pointcloud.ros_package_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_dnNLUKDPEeWs9KzTQVqeBQ" type="2001" fontName="Ubuntu">
+    <children xmi:type="notation:DecorationNode" xmi:id="_dnNyYKDPEeWs9KzTQVqeBQ" type="5008"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_dnNyYaDPEeWs9KzTQVqeBQ" type="7001">
+      <children xmi:type="notation:Node" xmi:id="_gGVgMKDPEeWs9KzTQVqeBQ" type="3001">
+        <element xmi:type="ros:Parameter" href="remove_self_pointcloud.ros_package#//@node.0/@parameter.0"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_gGVgMaDPEeWs9KzTQVqeBQ"/>
+      </children>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_dnNyYqDPEeWs9KzTQVqeBQ" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_dnNyY6DPEeWs9KzTQVqeBQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_dnNyZKDPEeWs9KzTQVqeBQ"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_e8rwgKDPEeWs9KzTQVqeBQ" type="3004">
+      <children xmi:type="notation:DecorationNode" xmi:id="_e8sXkKDPEeWs9KzTQVqeBQ" type="5004"/>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_e8rwgaDPEeWs9KzTQVqeBQ"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_e8rwgqDPEeWs9KzTQVqeBQ" fontName="Ubuntu"/>
+      <element xmi:type="ros:Publisher" href="remove_self_pointcloud.ros_package#//@node.0/@publisher.0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_e8rwg6DPEeWs9KzTQVqeBQ"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_fN41QKDPEeWs9KzTQVqeBQ" type="3007">
+      <children xmi:type="notation:DecorationNode" xmi:id="_fN41RKDPEeWs9KzTQVqeBQ" type="5007"/>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_fN41QaDPEeWs9KzTQVqeBQ"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_fN41QqDPEeWs9KzTQVqeBQ" fontName="Ubuntu"/>
+      <element xmi:type="ros:Subscriber" href="remove_self_pointcloud.ros_package#//@node.0/@subscriber.0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fN41Q6DPEeWs9KzTQVqeBQ" x="-79" y="96"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_fpd-AKDPEeWs9KzTQVqeBQ" type="3007">
+      <children xmi:type="notation:DecorationNode" xmi:id="_fpelEKDPEeWs9KzTQVqeBQ" type="5007"/>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_fpd-AaDPEeWs9KzTQVqeBQ"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_fpd-AqDPEeWs9KzTQVqeBQ" fontName="Ubuntu"/>
+      <element xmi:type="ros:Subscriber" href="remove_self_pointcloud.ros_package#//@node.0/@subscriber.1"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fpd-A6DPEeWs9KzTQVqeBQ" x="-79" y="168"/>
+    </children>
+    <element xmi:type="ros:Node" href="remove_self_pointcloud.ros_package#//@node.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dnNLUaDPEeWs9KzTQVqeBQ" x="276" y="96" width="553" height="265"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_dHZp4aDPEeWs9KzTQVqeBQ"/>
+  <element xmi:type="ros:Package" href="remove_self_pointcloud.ros_package#/"/>
+</notation:Diagram>
