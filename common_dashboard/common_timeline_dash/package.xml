@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>common_timeline_dash</name>
-  <description>The common_timeline_dash package</description>
+  <description>The common_timeline_dash package. Send the string : "Month Day Year Color Message" and it will be added to the timeline at the correct date. Example : "Dec 25 2015 white Christmas Day Holiday"</description>
   <version>0.1.0</version>
   <maintainer email="kriegel.joffrey@gmail.com">Joffrey Kriegel</maintainer>
   <author email="kriegel.joffrey@gmail.com">Joffrey Kriegel</author>

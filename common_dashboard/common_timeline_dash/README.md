@@ -3,7 +3,7 @@ common_timeline_dash
 
 General description
 ---------------------
-The common_timeline_dash package
+The common_timeline_dash package. Send the string : "Month Day Year Color Message" and it will be added to the timeline at the correct date. Example : "Dec 25 2015 white Christmas Day Holiday"
 
 <img src="./model/common_timeline_dash.png" width="300px" />
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ros:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ros="http://ros/1.0" name="common_timeline_dash" author="Joffrey Kriegel" author_email="kriegel.joffrey@gmail.com" description="The common_timeline_dash package" license="GPLv3">
+<ros:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ros="http://ros/1.0" name="common_timeline_dash" author="Joffrey Kriegel" author_email="kriegel.joffrey@gmail.com" description="The common_timeline_dash package. Send the string : &quot;Month Day Year Color Message&quot; and it will be added to the timeline at the correct date. Example : &quot;Dec 25 2015 white Christmas Day Holiday&quot;" license="GPLv3">
   <node name="common_timeline_dash" frequency="1.0">
     <subscriber name="input" msg="std_msgs::String"/>
     <parameter name="file_path" type="string" value="/home/jbot/home_dashboard_project/timeline_data.yml"/>

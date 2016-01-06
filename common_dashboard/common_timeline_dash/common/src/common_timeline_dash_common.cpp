@@ -62,17 +62,29 @@ public:
     {
         /* protected region user implementation of subscribe callback for input on begin */
     	char my_buff[256];
-		char *name=new char[(msg->data).size()+1];
-		char *date=new char[(msg->data).size()+1];
-		char *color=new char[(msg->data).size()+1];
-		name[(msg->data).size()] = 0;
-		date[(msg->data).size()] = 0;
-		color[(msg->data).size()] = 0;
-		memcpy(name, (msg->data).c_str(), (msg->data).size());
-		memcpy(date, (msg->data).c_str(), (msg->data).size());
-		memcpy(color, (msg->data).c_str(), (msg->data).size());
 
-		sprintf(my_buff, "echo \"  - name: \"%s\"\n    date: \"%s\"\n    background: \"%s\"\" >> %s", name, date, color, localconfig.file_path.c_str());
+		std::string str = msg->data;
+		std::string buf; // Have a buffer string
+		std::stringstream ss(str); // Insert the string into a stream
+
+		std::vector<std::string> tokens; // Create vector to hold our words
+		std::string date_str;
+		std::string color_str;
+		std::string name_str;
+
+		if(ss >> buf)
+			date_str = buf + " ";
+		if(ss >> buf)
+			date_str = date_str + buf + ", ";
+		if(ss >> buf)
+			date_str = date_str + buf;
+		if(ss >> buf)
+			color_str = buf;
+
+		while (ss >> buf)
+			name_str = name_str + buf + " ";
+
+		sprintf(my_buff, "echo \"  - name: \\\"%s\\\"\n    date: \\\"%s\\\"\n    background: \\\"%s\\\"\" >> %s", name_str.c_str(), date_str.c_str(), color_str.c_str(), localconfig.file_path.c_str());
 		std::cout << my_buff << std::endl;
 		system(my_buff);
 
