@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ros:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ros="http://ros/1.0" name="common_timeline_dash" author="Joffrey Kriegel" author_email="kriegel.joffrey@gmail.com" description="The common_timeline_dash package" license="GPLv3">
+  <node name="common_timeline_dash" frequency="1.0">
+    <subscriber name="input" msg="std_msgs::String"/>
+    <parameter name="file_path" type="string" value="/home/jbot/home_dashboard_project/timeline_data.yml"/>
+  </node>
+  <depend>std_msgs</depend>
+</ros:Package>
