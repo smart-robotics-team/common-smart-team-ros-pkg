@@ -86,7 +86,6 @@ public:
     void update(remove_self_pointcloud_data &data, remove_self_pointcloud_config config)
     {
         /* protected region user update on begin */
-
     	data.out_output_active = output_ready;
 		if(output_ready)
 		{

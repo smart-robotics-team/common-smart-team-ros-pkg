@@ -83,8 +83,14 @@ int main(int argc, char** argv)
     remove_self_pointcloud_ros node;
     node.configure();
 
- // if cycle time == 0 do a spin() here without calling node.update()
-    ros::spin();
+    ros::Rate loop_rate(40.0);
+
+    while(node.n_.ok())
+    {
+        node.update();
+        loop_rate.sleep();
+        ros::spinOnce();
+    }
 
     return 0;
 }

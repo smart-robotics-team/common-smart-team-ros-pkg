@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ros:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ros="http://ros/1.0" name="remove_self_pointcloud" author="Joffrey Kriegel" author_email="kriegel.joffrey@gmail.com" description="The remove_self_pointcloud package" license="GPLv3">
-  <node name="remove_self_pointcloud">
+  <node name="remove_self_pointcloud" frequency="40.0">
     <publisher name="output" eventHandler="" msg="sensor_msgs::PointCloud2"/>
     <subscriber name="input" msg="sensor_msgs::PointCloud2"/>
     <subscriber name="robot_position" msg="nav_msgs::Odometry"/>
