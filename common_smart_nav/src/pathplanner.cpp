@@ -479,6 +479,10 @@ void TrajectoryManager::goalCallback(const geometry_msgs::PoseStamped::ConstPtr 
 	final_pose = *pose;
 	ROS_INFO("NEW POSE");
 
+	planner_costmap_->stop();
+	planner_costmap_->resetLayers();
+	planner_costmap_->start();
+
 	computePath();
 	publishPath();
 
@@ -492,6 +496,10 @@ void TrajectoryManager::goalActionCallback(void)
 	//final_pose = goal->goal;
 	action_goal = 1;
         ROS_INFO("NEW POSE (ACTION)");
+
+	planner_costmap_->stop();
+	planner_costmap_->resetLayers();
+	planner_costmap_->start();
 
         computePath();
         publishPath();
@@ -607,6 +615,9 @@ void TrajectoryManager::planThread(void)
 				}
 				if(cpt == 10) {
 					ROS_INFO("Trying to reset layers");
+					planner_costmap_->stop();
+					planner_costmap_->resetLayers();
+					planner_costmap_->start();
 					//planner_costmap_->resetLayers();
 					//planner_costmap_->getCostmap()->resetMaps();
 					//boost::unique_lock< boost::shared_mutex > lock(*(planner_costmap_->getCostmap()->getLock()));
