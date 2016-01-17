@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ros:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ros="http://ros/1.0" name="robot_mandibles" author="Joffrey Kriegel" author_email="kriegel.joffrey@gmail.com" description="The robot_mandibles package. servo1 is always the first servo to move when opening." license="GPLv3">
+  <node name="robot_mandibles" frequency="10.0">
+    <publisher name="servo_speed" msg="std_msgs::UInt16"/>
+    <publisher name="servo1" msg="std_msgs::UInt16"/>
+    <publisher name="servo2" msg="std_msgs::UInt16"/>
+    <subscriber name="position" msg="std_msgs::UInt16"/>
+    <parameter name="servo1_position0" value="90"/>
+    <parameter name="servo2_position0" value="90"/>
+    <parameter name="servo1_position1" value="100"/>
+    <parameter name="servo2_position1" value="100"/>
+    <parameter name="servo1_position2" value="80"/>
+    <parameter name="servo2_position2" value="80"/>
+    <parameter name="move_speed" value="3"/>
+    <parameter name="wait_step_1_to_2" type="double" value="1.0"/>
+  </node>
+  <depend>std_msgs</depend>
+</ros:Package>
