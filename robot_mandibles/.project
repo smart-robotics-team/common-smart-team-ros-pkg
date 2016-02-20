@@ -124,6 +124,41 @@
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
+			<name>[Targets]/[exe] robot_mandibles</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] robot_mandibles/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] robot_mandibles/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] robot_mandibles/Source Files/robot_mandibles_ros.cpp</name>
+			<type>1</type>
+			<location>/home/viki/catkin_ws/src/common-smart-team-ros-pkg/robot_mandibles/ros/src/robot_mandibles_ros.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] robot_mandibles/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] robot_mandibles/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] robot_mandibles/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
 			<name>[Targets]/[lib] gtest</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>

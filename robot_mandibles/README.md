@@ -42,6 +42,14 @@ Node: robot_mandibles
 <!--- protected region wait_step_1_to_2 on begin -->
 <!--- protected region wait_step_1_to_2 end -->
 
+**servo1_position3** *(int, default: 80)*
+<!--- protected region servo1_position3 on begin -->
+<!--- protected region servo1_position3 end -->
+
+**servo2_position3** *(int, default: 80)*
+<!--- protected region servo2_position3 on begin -->
+<!--- protected region servo2_position3 end -->
+
 
 #### Published Topics
 **servo_speed** *(std_msgs::UInt16)*   

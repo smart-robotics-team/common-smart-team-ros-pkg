@@ -16,10 +16,14 @@
 #define GOTO_2_STEP1 	21
 #define GOTO_2_STEP2 	22
 #define IN_2 			23
+#define GOTO_3_STEP1 	31
+#define GOTO_3_STEP2 	32
+#define IN_3 			33
 
 #define TO_POSITION_0 	0
 #define TO_POSITION_1 	1
 #define TO_POSITION_2 	2
+#define TO_POSITION_3 	3
 /* protected region user include files end */
 
 class robot_mandibles_config
@@ -33,6 +37,8 @@ public:
     int servo2_position2;
     int move_speed;
     double wait_step_1_to_2;
+    int servo1_position3;
+    int servo2_position3;
 };
 
 class robot_mandibles_data
@@ -174,6 +180,35 @@ public:
 			data.out_servo1.data = (uint16_t)local_config.servo1_position2;
 			data.out_servo2.data = (uint16_t)local_config.servo2_position2;
 			break;
+		case GOTO_3_STEP1:
+			data.out_servo_speed_active = true;
+			data.out_servo1_active = true;
+			data.out_servo2_active = false;
+			data.out_servo_speed.data = (uint16_t)local_config.move_speed;
+			data.out_servo1.data = (uint16_t)local_config.servo1_position3;
+			data.out_servo2.data = (uint16_t)local_config.servo2_position3;
+			timer = ros::Time::now();
+			state = GOTO_2_STEP2;
+			break;
+		case GOTO_3_STEP2:
+			if( (ros::Time::now().toSec() - timer.toSec()) > local_config.wait_step_1_to_2 ){
+				data.out_servo_speed_active = true;
+				data.out_servo1_active = true;
+				data.out_servo2_active = true;
+				data.out_servo_speed.data = (uint16_t)local_config.move_speed;
+				data.out_servo1.data = (uint16_t)local_config.servo1_position3;
+				data.out_servo2.data = (uint16_t)local_config.servo2_position3;
+				state = IN_3;
+			}
+			break;
+		case IN_3:
+			data.out_servo_speed_active = false;
+			data.out_servo1_active = false;
+			data.out_servo2_active = false;
+			data.out_servo_speed.data = (uint16_t)local_config.move_speed;
+			data.out_servo1.data = (uint16_t)local_config.servo1_position3;
+			data.out_servo2.data = (uint16_t)local_config.servo2_position3;
+			break;
     	default:
     		break;
     	}
@@ -201,6 +236,12 @@ public:
 			else
 				state = GOTO_2_STEP1;
     	    break;
+    	case TO_POSITION_3:
+			if(state != IN_O)
+				state = GOTO_3_STEP2;
+			else
+				state = GOTO_3_STEP1;
+			break;
     	default:
     		break;
     	}

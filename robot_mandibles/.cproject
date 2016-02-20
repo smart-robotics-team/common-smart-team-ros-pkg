@@ -20,6 +20,8 @@
 <storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
 <storageModule moduleId="org.eclipse.cdt.core.pathentry">
 <pathentry excluding="**/CMakeFiles/" kind="out" path=""/>
+<pathentry kind="mac" name="ROS_PACKAGE_NAME" path="" value="&quot;robot_mandibles&quot;"/>
+<pathentry kind="mac" name="ROSCONSOLE_BACKEND_LOG4CXX" path="" value=""/>
 <pathentry kind="mac" name="__STDC__" path="" value="1"/>
 <pathentry kind="mac" name="__STDC_HOSTED__" path="" value="1"/>
 <pathentry kind="mac" name="__GNUC__" path="" value="4"/>
@@ -234,28 +236,24 @@
 <pathentry kind="mac" name="__GXX_RTTI" path="" value="1"/>
 <pathentry kind="mac" name="__EXCEPTIONS" path="" value="1"/>
 <pathentry kind="mac" name="_GNU_SOURCE" path="" value="1"/>
+<pathentry include="/home/viki/catkin_ws/src/common-smart-team-ros-pkg/robot_mandibles/bride/devel/include" kind="inc" path="" system="true"/>
+<pathentry include="/home/viki/catkin_ws/src/common-smart-team-ros-pkg/robot_mandibles/common/include" kind="inc" path="" system="true"/>
+<pathentry include="/home/viki/catkin_ws/src/common-smart-team-ros-pkg/robot_mandibles/common/src" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/hydro/include" kind="inc" path="" system="true"/>
+<pathentry include="/usr/include" kind="inc" path="" system="true"/>
 <pathentry include="/usr/src/gtest/include" kind="inc" path="" system="true"/>
 <pathentry include="/usr/src/gtest" kind="inc" path="" system="true"/>
 <pathentry include="/home/viki/catkin_ws/devel/include" kind="inc" path="" system="true"/>
-<pathentry include="/opt/ros/hydro/include" kind="inc" path="" system="true"/>
 <pathentry include="/usr/lib/gcc/i686-linux-gnu/4.6/include" kind="inc" path="" system="true"/>
 <pathentry include="/usr/local/include" kind="inc" path="" system="true"/>
 <pathentry include="/usr/lib/gcc/i686-linux-gnu/4.6/include-fixed" kind="inc" path="" system="true"/>
 <pathentry include="/usr/include/i386-linux-gnu" kind="inc" path="" system="true"/>
-<pathentry include="/usr/include" kind="inc" path="" system="true"/>
 <pathentry include="/usr/include/c++/4.6" kind="inc" path="" system="true"/>
 <pathentry include="/usr/include/c++/4.6/i686-linux-gnu" kind="inc" path="" system="true"/>
 <pathentry include="/usr/include/c++/4.6/backward" kind="inc" path="" system="true"/>
 </storageModule>
 <storageModule moduleId="org.eclipse.cdt.make.core.buildtargets">
 <buildTargets>
-<target name=": _catkin_empty_exported_target" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
-<buildCommand>catmake</buildCommand>
-<buildArguments>-j8</buildArguments>
-<buildTarget>_catkin_empty_exported_target</buildTarget>
-<stopOnError>true</stopOnError>
-<useDefaultCommand>false</useDefaultCommand>
-</target>
 <target name=": clean_test_results" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
 <buildCommand>catmake</buildCommand>
 <buildArguments>-j8</buildArguments>
@@ -267,6 +265,34 @@
 <buildCommand>catmake</buildCommand>
 <buildArguments>-j8</buildArguments>
 <buildTarget>doxygen</buildTarget>
+<stopOnError>true</stopOnError>
+<useDefaultCommand>false</useDefaultCommand>
+</target>
+<target name=": dynamic_reconfigure_gencfg" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<buildCommand>catmake</buildCommand>
+<buildArguments>-j8</buildArguments>
+<buildTarget>dynamic_reconfigure_gencfg</buildTarget>
+<stopOnError>true</stopOnError>
+<useDefaultCommand>false</useDefaultCommand>
+</target>
+<target name=": dynamic_reconfigure_generate_messages_cpp" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<buildCommand>catmake</buildCommand>
+<buildArguments>-j8</buildArguments>
+<buildTarget>dynamic_reconfigure_generate_messages_cpp</buildTarget>
+<stopOnError>true</stopOnError>
+<useDefaultCommand>false</useDefaultCommand>
+</target>
+<target name=": dynamic_reconfigure_generate_messages_lisp" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<buildCommand>catmake</buildCommand>
+<buildArguments>-j8</buildArguments>
+<buildTarget>dynamic_reconfigure_generate_messages_lisp</buildTarget>
+<stopOnError>true</stopOnError>
+<useDefaultCommand>false</useDefaultCommand>
+</target>
+<target name=": dynamic_reconfigure_generate_messages_py" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<buildCommand>catmake</buildCommand>
+<buildArguments>-j8</buildArguments>
+<buildTarget>dynamic_reconfigure_generate_messages_py</buildTarget>
 <stopOnError>true</stopOnError>
 <useDefaultCommand>false</useDefaultCommand>
 </target>
@@ -305,10 +331,108 @@
 <stopOnError>true</stopOnError>
 <useDefaultCommand>false</useDefaultCommand>
 </target>
+<target name="[exe] robot_mandibles" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<buildCommand>catmake</buildCommand>
+<buildArguments>-j8</buildArguments>
+<buildTarget>robot_mandibles</buildTarget>
+<stopOnError>true</stopOnError>
+<useDefaultCommand>false</useDefaultCommand>
+</target>
+<target name="[exe] robot_mandibles/fast" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<buildCommand>catmake</buildCommand>
+<buildArguments>-j8</buildArguments>
+<buildTarget>robot_mandibles/fast</buildTarget>
+<stopOnError>true</stopOnError>
+<useDefaultCommand>false</useDefaultCommand>
+</target>
+<target name="Build" path="[Targets]/[exe] robot_mandibles" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<buildCommand>catmake</buildCommand>
+<buildArguments>-C "/home/viki/catkin_ws/src/common-smart-team-ros-pkg/robot_mandibles/bride" -j8</buildArguments>
+<buildTarget>robot_mandibles</buildTarget>
+<stopOnError>true</stopOnError>
+<useDefaultCommand>false</useDefaultCommand>
+</target>
+<target name="Clean" path="[Targets]/[exe] robot_mandibles" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<buildCommand>/usr/bin/cmake</buildCommand>
+<buildArguments>-E chdir "/home/viki/catkin_ws/src/common-smart-team-ros-pkg/robot_mandibles/bride" "/usr/bin/cmake" -P "CMakeFiles/robot_mandibles.dir/cmake_clean.cmake"</buildArguments>
+<buildTarget></buildTarget>
+<stopOnError>true</stopOnError>
+<useDefaultCommand>false</useDefaultCommand>
+</target>
+<target name=": robot_mandibles_gencfg" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<buildCommand>catmake</buildCommand>
+<buildArguments>-j8</buildArguments>
+<buildTarget>robot_mandibles_gencfg</buildTarget>
+<stopOnError>true</stopOnError>
+<useDefaultCommand>false</useDefaultCommand>
+</target>
+<target name=": roscpp_generate_messages_cpp" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<buildCommand>catmake</buildCommand>
+<buildArguments>-j8</buildArguments>
+<buildTarget>roscpp_generate_messages_cpp</buildTarget>
+<stopOnError>true</stopOnError>
+<useDefaultCommand>false</useDefaultCommand>
+</target>
+<target name=": roscpp_generate_messages_lisp" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<buildCommand>catmake</buildCommand>
+<buildArguments>-j8</buildArguments>
+<buildTarget>roscpp_generate_messages_lisp</buildTarget>
+<stopOnError>true</stopOnError>
+<useDefaultCommand>false</useDefaultCommand>
+</target>
+<target name=": roscpp_generate_messages_py" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<buildCommand>catmake</buildCommand>
+<buildArguments>-j8</buildArguments>
+<buildTarget>roscpp_generate_messages_py</buildTarget>
+<stopOnError>true</stopOnError>
+<useDefaultCommand>false</useDefaultCommand>
+</target>
+<target name=": rosgraph_msgs_generate_messages_cpp" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<buildCommand>catmake</buildCommand>
+<buildArguments>-j8</buildArguments>
+<buildTarget>rosgraph_msgs_generate_messages_cpp</buildTarget>
+<stopOnError>true</stopOnError>
+<useDefaultCommand>false</useDefaultCommand>
+</target>
+<target name=": rosgraph_msgs_generate_messages_lisp" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<buildCommand>catmake</buildCommand>
+<buildArguments>-j8</buildArguments>
+<buildTarget>rosgraph_msgs_generate_messages_lisp</buildTarget>
+<stopOnError>true</stopOnError>
+<useDefaultCommand>false</useDefaultCommand>
+</target>
+<target name=": rosgraph_msgs_generate_messages_py" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<buildCommand>catmake</buildCommand>
+<buildArguments>-j8</buildArguments>
+<buildTarget>rosgraph_msgs_generate_messages_py</buildTarget>
+<stopOnError>true</stopOnError>
+<useDefaultCommand>false</useDefaultCommand>
+</target>
 <target name=": run_tests" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
 <buildCommand>catmake</buildCommand>
 <buildArguments>-j8</buildArguments>
 <buildTarget>run_tests</buildTarget>
+<stopOnError>true</stopOnError>
+<useDefaultCommand>false</useDefaultCommand>
+</target>
+<target name=": std_msgs_generate_messages_cpp" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<buildCommand>catmake</buildCommand>
+<buildArguments>-j8</buildArguments>
+<buildTarget>std_msgs_generate_messages_cpp</buildTarget>
+<stopOnError>true</stopOnError>
+<useDefaultCommand>false</useDefaultCommand>
+</target>
+<target name=": std_msgs_generate_messages_lisp" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<buildCommand>catmake</buildCommand>
+<buildArguments>-j8</buildArguments>
+<buildTarget>std_msgs_generate_messages_lisp</buildTarget>
+<stopOnError>true</stopOnError>
+<useDefaultCommand>false</useDefaultCommand>
+</target>
+<target name=": std_msgs_generate_messages_py" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<buildCommand>catmake</buildCommand>
+<buildArguments>-j8</buildArguments>
+<buildTarget>std_msgs_generate_messages_py</buildTarget>
 <stopOnError>true</stopOnError>
 <useDefaultCommand>false</useDefaultCommand>
 </target>
@@ -337,6 +461,27 @@
 <buildCommand>catmake</buildCommand>
 <buildArguments>-j8</buildArguments>
 <buildTarget>clean</buildTarget>
+<stopOnError>true</stopOnError>
+<useDefaultCommand>false</useDefaultCommand>
+</target>
+<target name="[obj] ros/src/robot_mandibles_ros.cpp.o" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<buildCommand>catmake</buildCommand>
+<buildArguments>-j8</buildArguments>
+<buildTarget>ros/src/robot_mandibles_ros.cpp.o</buildTarget>
+<stopOnError>true</stopOnError>
+<useDefaultCommand>false</useDefaultCommand>
+</target>
+<target name="[pre] ros/src/robot_mandibles_ros.cpp.i" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<buildCommand>catmake</buildCommand>
+<buildArguments>-j8</buildArguments>
+<buildTarget>ros/src/robot_mandibles_ros.cpp.i</buildTarget>
+<stopOnError>true</stopOnError>
+<useDefaultCommand>false</useDefaultCommand>
+</target>
+<target name="[to asm] ros/src/robot_mandibles_ros.cpp.s" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+<buildCommand>catmake</buildCommand>
+<buildArguments>-j8</buildArguments>
+<buildTarget>ros/src/robot_mandibles_ros.cpp.s</buildTarget>
 <stopOnError>true</stopOnError>
 <useDefaultCommand>false</useDefaultCommand>
 </target>

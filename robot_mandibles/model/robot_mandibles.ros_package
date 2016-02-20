@@ -13,6 +13,8 @@
     <parameter name="servo2_position2" value="80"/>
     <parameter name="move_speed" value="3"/>
     <parameter name="wait_step_1_to_2" type="double" value="1.0"/>
+    <parameter name="servo1_position3" value="80"/>
+    <parameter name="servo2_position3" value="80"/>
   </node>
   <depend>std_msgs</depend>
 </ros:Package>

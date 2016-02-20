@@ -50,6 +50,8 @@ class robot_mandibles_ros
         np_.param("servo2_position2", component_config_.servo2_position2, (int)80);
         np_.param("move_speed", component_config_.move_speed, (int)3);
         np_.param("wait_step_1_to_2", component_config_.wait_step_1_to_2, (double)1.0);
+        np_.param("servo1_position3", component_config_.servo1_position3, (int)80);
+        np_.param("servo2_position3", component_config_.servo2_position3, (int)80);
     }
     void topicCallback_position(const std_msgs::UInt16::ConstPtr& msg)
     {
@@ -66,6 +68,8 @@ class robot_mandibles_ros
         component_config_.servo2_position2 = config.servo2_position2;
         component_config_.move_speed = config.move_speed;
         component_config_.wait_step_1_to_2 = config.wait_step_1_to_2;
+        component_config_.servo1_position3 = config.servo1_position3;
+        component_config_.servo2_position3 = config.servo2_position3;
         configure();
     }
 

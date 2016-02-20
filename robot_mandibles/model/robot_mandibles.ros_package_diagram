@@ -35,6 +35,14 @@
         <element xmi:type="ros:Parameter" href="robot_mandibles.ros_package#//@node.0/@parameter.7"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_KBLvMb0kEeWIavVfrTZYrg"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_fBJVsM2xEeWrHt5dzD1zSw" type="3001">
+        <element xmi:type="ros:Parameter" href="robot_mandibles.ros_package#//@node.0/@parameter.8"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_fBJVsc2xEeWrHt5dzD1zSw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_gnS0IM2xEeWrHt5dzD1zSw" type="3001">
+        <element xmi:type="ros:Parameter" href="robot_mandibles.ros_package#//@node.0/@parameter.9"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_gnS0Ic2xEeWrHt5dzD1zSw"/>
+      </children>
       <styles xmi:type="notation:TitleStyle" xmi:id="_RVQzEr0fEeWIavVfrTZYrg" showTitle="true"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_RVQzE70fEeWIavVfrTZYrg"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_RVQzFL0fEeWIavVfrTZYrg"/>
