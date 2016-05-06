@@ -73,11 +73,19 @@ public:
     		std::string s(ss.str());
     		data.out_info_string.data = std::string("Current battery voltage : ") + s;
     		data.out_info_string_active = true;
+                output_voltage_info = false;
     	}
 
     	if(charge_needed)
     	{
     		data.out_need_charge_active = true;
+		
+                std::ostringstream ss;
+                ss << current_voltage.data;
+                std::string s(ss.str());
+                data.out_info_string.data = std::string("WARNING! Battery NEEDS charge : ") + s;
+                data.out_info_string_active = true;
+                charge_needed = false;
     	}
         /* protected region user update end */
     }
@@ -85,10 +93,12 @@ public:
     void topicCallback_battery_voltage(const std_msgs::Float32::ConstPtr& msg)
     {
         /* protected region user implementation of subscribe callback for battery_voltage on begin */
+        current_voltage.data = msg->data;
+
+        output_voltage_info = false;
         if( (ros::Time::now().toSec() - last_voltage_info.toSec()) > local_config.time_voltage_info )
         {
-        	current_voltage.data = msg->data;
-        	output_voltage_info = true;
+		output_voltage_info = true;
         	last_voltage_info = ros::Time::now();
         }
 
