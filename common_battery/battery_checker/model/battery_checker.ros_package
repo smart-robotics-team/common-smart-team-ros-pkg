@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ros:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ros="http://ros/1.0" name="battery_checker" author="Joffrey Kriegel" author_email="kriegel.joffrey@gmail.com" description="The battery_checker package" license="GPLv3">
+  <node name="battery_checker" frequency="10.0">
+    <publisher name="info_string" msg="std_msgs::String"/>
+    <publisher name="need_charge" msg="std_msgs::Empty"/>
+    <subscriber name="battery_voltage" msg="std_msgs::Float32"/>
+    <parameter name="voltage_limit" type="double" value="4.0"/>
+    <parameter name="time_voltage_info" type="double" value="600.0"/>
+    <parameter name="time_need_charge" type="double" value="300"/>
+  </node>
+  <depend>std_msgs</depend>
+</ros:Package>

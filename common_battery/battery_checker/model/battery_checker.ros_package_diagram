@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:ros="http://ros/1.0" xmi:id="_ErrbUBNhEeay3MfpzwGqXg" type="RosPackage" name="battery_checker.ros_package_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_F_AEYBNhEeay3MfpzwGqXg" type="2001" fontName="Ubuntu">
+    <children xmi:type="notation:DecorationNode" xmi:id="_F_B5kBNhEeay3MfpzwGqXg" type="5008"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_F_DHsBNhEeay3MfpzwGqXg" type="7001">
+      <children xmi:type="notation:Node" xmi:id="_msmjABNhEeay3MfpzwGqXg" type="3001">
+        <element xmi:type="ros:Parameter" href="battery_checker.ros_package#//@node.0/@parameter.0"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_msmjARNhEeay3MfpzwGqXg"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_uRROUBNhEeay3MfpzwGqXg" type="3001">
+        <element xmi:type="ros:Parameter" href="battery_checker.ros_package#//@node.0/@parameter.1"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_uRROURNhEeay3MfpzwGqXg"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_HYaR4BNiEeay3MfpzwGqXg" type="3001">
+        <element xmi:type="ros:Parameter" href="battery_checker.ros_package#//@node.0/@parameter.2"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_HYaR4RNiEeay3MfpzwGqXg"/>
+      </children>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_F_DHsRNhEeay3MfpzwGqXg" showTitle="true"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_F_DHshNhEeay3MfpzwGqXg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_F_DHsxNhEeay3MfpzwGqXg"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_VhRfcBNhEeay3MfpzwGqXg" type="3007">
+      <children xmi:type="notation:DecorationNode" xmi:id="_VhSGgBNhEeay3MfpzwGqXg" type="5007"/>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_VhRfcRNhEeay3MfpzwGqXg"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_VhRfchNhEeay3MfpzwGqXg" fontName="Ubuntu"/>
+      <element xmi:type="ros:Subscriber" href="battery_checker.ros_package#//@node.0/@subscriber.0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VhRfcxNhEeay3MfpzwGqXg" x="-79" y="120"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_a4YuEBNhEeay3MfpzwGqXg" type="3004">
+      <children xmi:type="notation:DecorationNode" xmi:id="_a4Z8MBNhEeay3MfpzwGqXg" type="5004"/>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_a4YuERNhEeay3MfpzwGqXg"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_a4YuEhNhEeay3MfpzwGqXg" fontName="Ubuntu"/>
+      <element xmi:type="ros:Publisher" href="battery_checker.ros_package#//@node.0/@publisher.0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_a4YuExNhEeay3MfpzwGqXg" x="420" y="156"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_fQogsBNhEeay3MfpzwGqXg" type="3004">
+      <children xmi:type="notation:DecorationNode" xmi:id="_fQpHwBNhEeay3MfpzwGqXg" type="5004"/>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_fQogsRNhEeay3MfpzwGqXg"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_fQogshNhEeay3MfpzwGqXg" fontName="Ubuntu"/>
+      <element xmi:type="ros:Publisher" href="battery_checker.ros_package#//@node.0/@publisher.1"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fQogsxNhEeay3MfpzwGqXg" x="420" y="84"/>
+    </children>
+    <element xmi:type="ros:Node" href="battery_checker.ros_package#//@node.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_F_AEYRNhEeay3MfpzwGqXg" x="312" y="120" width="421" height="241"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_ErrbURNhEeay3MfpzwGqXg"/>
+  <element xmi:type="ros:Package" href="battery_checker.ros_package#/"/>
+</notation:Diagram>
