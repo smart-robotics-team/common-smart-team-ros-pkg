@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(common_smart_nav)
+    
+SET(CMAKE_BUILD_TYPE Release)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
