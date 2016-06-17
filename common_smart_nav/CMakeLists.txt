@@ -120,17 +120,22 @@ include_directories(
 ## Declare a cpp executable
 add_executable(pathplanner src/pathplanner.cpp)
 add_executable(pathwrapper src/pathwrapper.cpp)
+add_executable(arduino_pathwrapper src/arduino_pathwrapper.cpp)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
 add_dependencies(pathplanner common_smart_nav_generate_messages_cpp common_smart_nav_EXPORTED_TARGETS)
 add_dependencies(pathwrapper common_smart_nav_generate_messages_cpp common_smart_nav_EXPORTED_TARGETS)
+add_dependencies(arduino_pathwrapper common_smart_nav_generate_messages_cpp common_smart_nav_EXPORTED_TARGETS)
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(pathplanner
   ${catkin_LIBRARIES}
 )
 target_link_libraries(pathwrapper
+  ${catkin_LIBRARIES}
+)
+target_link_libraries(arduino_pathwrapper
   ${catkin_LIBRARIES}
 )
 
