@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ros:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ros="http://ros/1.0" name="image_saver" author="Joffrey Kriegel" author_email="kriegel.joffrey@gmail.com" description="The image_saver package" license="GPLv3">
+  <node name="image_saver" frequency="50.0">
+    <publisher name="save_done" msg="std_msgs::String"/>
+    <subscriber name="save_picture" msg="std_msgs::Empty"/>
+    <subscriber name="video_input" msg="sensor_msgs::Image"/>
+    <parameter name="save_path" type="string" value="~/save.jpg"/>
+  </node>
+  <depend>std_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>cv_bridge</depend>
+  <depend>image_transport</depend>
+</ros:Package>
