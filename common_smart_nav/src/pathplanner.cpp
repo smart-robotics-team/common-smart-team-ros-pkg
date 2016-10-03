@@ -357,7 +357,7 @@ bool TrajectoryManager::getPath(common_smart_nav::GetPlan::Request  &req,
 
 	current_pose = start;
 
-	boost::unique_lock< boost::shared_mutex > lock(*(planner_costmap_->getCostmap()->getLock()));
+	//boost::unique_lock< boost::shared_mutex > lock(*(planner_costmap_->getCostmap()->getLock()));
 
 	if(planner_->makePlan(start, req.goal, global_plan)){
 		//ROS_ERROR("planner makes plan");
@@ -413,7 +413,7 @@ bool TrajectoryManager::getDistance(common_smart_nav::GetDistance::Request  &req
 
 	//costmap_2d::Costmap2D* pCostmap = planner_costmap_->getCostmap();
 	//boost::unique_lock< boost::shared_mutex > lock(*(pCostmap->getLock()));
-	boost::unique_lock< boost::shared_mutex > lock(*(planner_costmap_->getCostmap()->getLock()));
+	//boost::unique_lock< boost::shared_mutex > lock(*(planner_costmap_->getCostmap()->getLock()));
 
 	if(planner_->makePlan(start, req.goal, global_plan)){
 		//ROS_ERROR("planner makes plan");
@@ -551,7 +551,7 @@ void TrajectoryManager::computePath(void)
 	current_pose = start;
 
 	//costmap_2d::Costmap2D* pCostmap = planner_costmap_->getCostmap();
-	boost::unique_lock< boost::shared_mutex > lock(*(planner_costmap_->getCostmap()->getLock()));
+	//boost::unique_lock< boost::shared_mutex > lock(*(planner_costmap_->getCostmap()->getLock()));
 
 	if(planner_->makePlan(start, final_pose, global_plan)){
 		//ROS_ERROR("planner makes plan");

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ros:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ros="http://ros/1.0" name="common_float_multiplexer" author="Joffrey Kriegel" author_email="kriegel.joffrey@gmail.com" description="The common_float_multiplexer package" license="GPLv3">
+  <node name="common_float_multiplexer" frequency="50.0">
+    <publisher name="output" msg="std_msgs::Float32"/>
+    <subscriber name="index" msg="std_msgs::Int8"/>
+    <subscriber name="input0" msg="std_msgs::Float32"/>
+    <subscriber name="input1" msg="std_msgs::Float32"/>
+    <subscriber name="input2" msg="std_msgs::Float32"/>
+    <subscriber name="input3" msg="std_msgs::Float32"/>
+    <parameter name="starting_index" value="0"/>
+  </node>
+  <depend>std_msgs</depend>
+  <depend>tf</depend>
+</ros:Package>
