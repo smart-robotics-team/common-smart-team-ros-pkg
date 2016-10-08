@@ -260,7 +260,7 @@ int main(int argc, char **argv)
 	ros::init(argc, argv, "SSC32_Driver");
 	SSC32Driver drive;
 	// Refresh rate
-	ros::Rate loop_rate(2);                                // 35 with bluetooth
+	ros::Rate loop_rate(20);                                // 35 with bluetooth
 
 
 	while (ros::ok()) {
