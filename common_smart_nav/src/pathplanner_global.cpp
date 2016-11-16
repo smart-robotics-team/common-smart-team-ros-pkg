@@ -103,6 +103,7 @@ class TrajectoryManager
 		bool getPath(common_smart_nav::GetPlan::Request &req, common_smart_nav::GetPlan::Response &res);
 
 		double compute_distance(nav_msgs::Path path_to_compute);
+		double getHeadingFromQuat(geometry_msgs::Quaternion pose);
 
 		void goalActionCallback(void);
 
@@ -463,6 +464,7 @@ void TrajectoryManager::goalCallback(const geometry_msgs::PoseStamped::ConstPtr 
 {
 	final_pose = *pose;
 	ROS_INFO("NEW POSE");
+	//ROS_ERROR("globalplan GOAL : %lf", getHeadingFromQuat(final_pose.pose.orientation));
 
 	computePath();
 	publishPath();
@@ -547,17 +549,53 @@ void TrajectoryManager::computePath(void)
 	tmp_path.header.frame_id = map_name;
 	tmp_path.poses = global_plan;
 
+	/*
+	ROS_ERROR("globalplan : %lf", getHeadingFromQuat(tmp_path.poses.back().pose.orientation));
+	ROS_ERROR("tmp PATH %lf %lf / %lf %lf %lf %lf", tmp_path.poses.back().pose.position.x, tmp_path.poses.back().pose.position.y,
+                                                        tmp_path.poses.back().pose.orientation.x, tmp_path.poses.back().pose.orientation.y,
+                                                        tmp_path.poses.back().pose.orientation.z, tmp_path.poses.back().pose.orientation.w);
+	ROS_ERROR("final pose %lf %lf / %lf %lf %lf %lf", final_pose.pose.position.x, final_pose.pose.position.y,
+                                                        final_pose.pose.orientation.x, final_pose.pose.orientation.y,
+                                                        final_pose.pose.orientation.z, final_pose.pose.orientation.w);
+	*/
 	// lock
 	my_path = tmp_path;
 	// unlock
+
+	//ROS_ERROR("globalplan : %lf", getHeadingFromQuat(my_path.poses.back().pose.orientation));
 
 	sem = 1;
 
 }
 
+double TrajectoryManager::getHeadingFromQuat(geometry_msgs::Quaternion pose)
+{
+        double tmp = 0.0;
+        tmp = asin(2*pose.x*pose.y + 2*pose.z*pose.w);
+        //ROS_ERROR("%f %f %f %f / %f", pose.x, pose.y, pose.z, pose.w, atan2(2*pose.y*pose.w-2*pose.x*pose.z , 1 - 2*pose.y*pose.y - 2*pose.z*pose.z));
+        //ROS_ERROR("%f %f %f %f / %f", pose.x, pose.y, pose.z, pose.w, asin(2*pose.x*pose.y + 2*pose.z*pose.w));
+        //ROS_ERROR("%f %f %f %f / %f", pose.x, pose.y, pose.z, pose.w, atan2(2*pose.x*pose.w-2*pose.y*pose.z , 1 - 2*pose.x*pose.x - 2*pose.z*pose.z));
+        if( fabs(atan2(2*pose.y*pose.w-2*pose.x*pose.z , 1 - 2*pose.y*pose.y - 2*pose.z*pose.z)) < 0.1) {
+                return tmp;
+        }
+        else {
+                if(tmp >= 0)
+                        return 3.1415926 - tmp;
+                else
+                        return -3.1415926 - tmp;
+        }
+        //return atan2(2*pose.y*pose.w-2*pose.x*pose.z , 1 - 2*pose.y*pose.y - 2*pose.z*pose.z);
+
+}
+
+
 void TrajectoryManager::publishPath(void)
 {
 	path_pub.publish(my_path);
+	/*ROS_ERROR("Publish PATH %lf %lf / %lf %lf %lf %lf", my_path.poses.back().pose.position.x, my_path.poses.back().pose.position.y,
+							my_path.poses.back().pose.orientation.x, my_path.poses.back().pose.orientation.y, 
+							my_path.poses.back().pose.orientation.z, my_path.poses.back().pose.orientation.w);
+	*/
 }
 
 void TrajectoryManager::planThread(void)
@@ -639,12 +677,12 @@ void TrajectoryManager::planThread(void)
 				if(cpt > 100) {
 					cpt = 0;
 					computePath();
-					computePointHead(my_path);
+					//computePointHead(my_path);
 					publishPath();
 				}
 				if(cpt == 50) {
 					computePath();
-					computePointHead(my_path);
+					//computePointHead(my_path);
 					publishPath();
 				}
 				if(cpt == 10) {

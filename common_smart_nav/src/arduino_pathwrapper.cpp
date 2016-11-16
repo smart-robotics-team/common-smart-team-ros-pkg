@@ -79,10 +79,13 @@ class Pathwrapper {
 
 		int NB_STEP_SKIP;
                 double MAX_DIST_SKIP;
+
+		int8_t sem;
 };
 
 Pathwrapper::Pathwrapper()
 {
+	sem = 1;
 
 	ros::NodeHandle nhp("~");
 	nhp.getParam("map_name", map_name);
@@ -157,8 +160,8 @@ double Pathwrapper::getHeadingFromQuat(geometry_msgs::Quaternion pose)
 {
 	double tmp = 0.0;
 	tmp = asin(2*pose.x*pose.y + 2*pose.z*pose.w);
-	ROS_ERROR("%f %f %f %f / %f", pose.x, pose.y, pose.z, pose.w, atan2(2*pose.y*pose.w-2*pose.x*pose.z , 1 - 2*pose.y*pose.y - 2*pose.z*pose.z));
-	ROS_ERROR("%f %f %f %f / %f", pose.x, pose.y, pose.z, pose.w, asin(2*pose.x*pose.y + 2*pose.z*pose.w));
+	//ROS_ERROR("%f %f %f %f / %f", pose.x, pose.y, pose.z, pose.w, atan2(2*pose.y*pose.w-2*pose.x*pose.z , 1 - 2*pose.y*pose.y - 2*pose.z*pose.z));
+	//ROS_ERROR("%f %f %f %f / %f", pose.x, pose.y, pose.z, pose.w, asin(2*pose.x*pose.y + 2*pose.z*pose.w));
 	//ROS_ERROR("%f %f %f %f / %f", pose.x, pose.y, pose.z, pose.w, atan2(2*pose.x*pose.w-2*pose.y*pose.z , 1 - 2*pose.x*pose.x - 2*pose.z*pose.z));
 	if( fabs(atan2(2*pose.y*pose.w-2*pose.x*pose.z , 1 - 2*pose.y*pose.y - 2*pose.z*pose.z)) < 0.1) {
 		return tmp;
@@ -198,10 +201,18 @@ void Pathwrapper::pathCallback(const nav_msgs::Path::ConstPtr & path)
 	   }
 	   else {
 	 */
-	ROS_INFO("Path begin.");
+	//ROS_INFO("Path begin.");
 	my_path = *path;
-	ROS_INFO("Path next.");
+	//ROS_INFO("Path next.");
 
+/*
+	ROS_ERROR("CALLBACK PATH %lf %lf / %lf %lf %lf %lf", my_path.poses.back().pose.position.x, my_path.poses.back().pose.position.y,
+                                                        my_path.poses.back().pose.orientation.x, my_path.poses.back().pose.orientation.y,
+                                                        my_path.poses.back().pose.orientation.z, my_path.poses.back().pose.orientation.w);
+
+	ROS_INFO("CALLBACK back %lf", getHeadingFromQuat(path->poses.std::vector<geometry_msgs::PoseStamped >::back().pose.orientation));
+	ROS_INFO("CALLBACK back %lf", getHeadingFromQuat(my_path.poses.std::vector<geometry_msgs::PoseStamped >::back().pose.orientation));
+*/
 	if( !(my_path.poses.std::vector<geometry_msgs::PoseStamped >::empty()) ){
 		my_path.poses.std::vector<geometry_msgs::PoseStamped >::erase (my_path.poses.std::vector<geometry_msgs::PoseStamped >::begin());
 	}
@@ -277,7 +288,7 @@ void Pathwrapper::compute_next_pathpoint(tf::TransformListener& listener) {
 						}
 						final_pose.x = my_path.poses.std::vector<geometry_msgs::PoseStamped >::front().pose.position.x;
 						final_pose.y = my_path.poses.std::vector<geometry_msgs::PoseStamped >::front().pose.position.y;
-						ROS_INFO("%f", sqrt( pow(final_pose.x - base_pose.pose.position.x, 2) + pow(final_pose.y - base_pose.pose.position.y, 2) ));
+						//ROS_INFO("%f / THETA back %lf", sqrt( pow(final_pose.x - base_pose.pose.position.x, 2) + pow(final_pose.y - base_pose.pose.position.y, 2) ), getHeadingFromQuat(my_path.poses.std::vector<geometry_msgs::PoseStamped >::back().pose.orientation));
 						Pathwrapper::pose2D_pub.publish(final_pose);
 
 
@@ -328,7 +339,7 @@ void Pathwrapper::compute_next_pathpoint(tf::TransformListener& listener) {
 							listener.transformPose(map_name, odom_pose, base_pose);
 							i++;
 							test = sqrt( pow(final_pose.x - base_pose.pose.position.x, 2) + pow(final_pose.y - base_pose.pose.position.y, 2));
-							ROS_ERROR("i : %d / dist : %f", i, test);
+							ROS_ERROR("i : %d / dist : %f / finalGoal %f %f %f", i, test,final_ardugoal.x,final_ardugoal.y,final_ardugoal.theta);
 						}
 						usleep(300000);
 						std_msgs::Empty empty;
