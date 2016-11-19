@@ -352,7 +352,7 @@ void Pathwrapper::compute_next_pathpoint(tf::TransformListener& listener) {
 			}
 		}
 		catch(tf::TransformException& ex){
-			ROS_ERROR("Received an exception trying to transform a point from \"odom\" to \"base_link\": %s", ex.what());
+			ROS_ERROR("Received an exception trying to transform a point from \"%s\" to \"%s\": %s", map_name.c_str(), base_name.c_str(), ex.what());
 		}
 
 	}

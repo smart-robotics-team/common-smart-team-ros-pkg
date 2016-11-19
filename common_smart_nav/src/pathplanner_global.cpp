@@ -436,6 +436,13 @@ void TrajectoryManager::pathDoneCallback(const std_msgs::Empty::ConstPtr & pose)
 {
 	status = PAUSE;
 
+	if( action_goal == 1 ) {
+                //action_result_.result = current_pose;
+                as_.setSucceeded(action_result_);
+                action_goal = 0;
+                ROS_INFO("END POSE (ACTION)");
+        }
+
 	//planner_costmap_->resetLayers();
 	//planner_costmap_->resetMapOutsideWindow(0.001, 0.001);
 }
@@ -562,6 +569,10 @@ void TrajectoryManager::computePath(void)
 	my_path = tmp_path;
 	// unlock
 
+	if( action_goal == 1 ) {
+                action_feedback_.base_position = current_pose;
+                as_.publishFeedback(action_feedback_);
+        }
 	//ROS_ERROR("globalplan : %lf", getHeadingFromQuat(my_path.poses.back().pose.orientation));
 
 	sem = 1;
