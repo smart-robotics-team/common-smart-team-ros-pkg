@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <node pkg="common_roboclaw_drivers" type="roboclaw_differential" name="agv_roboclaw_differential" output="screen">
+
+        <param name = "usb_port" type = "string" value = "/dev/ttyUSB0" />
+        <param name = "serial_port_number" type = "int" value = "128" />
+
+        <param name = "P" type = "int" value = "150384" />
+        <param name = "I" type = "int" value = "80005" />
+        <param name = "D" type = "int" value = "60076" />
+        <param name = "Q" type = "int" value = "11000" />
+
+        <param name = "linear_coeff" type = "double" value = "1000.0" />
+        <param name = "angular_coeff" type = "double" value = "1000.0" />
+
+        <param name = "motor1_side" type = "int" value = "-1" />
+        <param name = "motor2_side" type = "int" value = "1" />
+
+
+        <remap from="/linear_speed" 	to = "/ardu_speed" />
+        <remap from="/angular_speed" 	to = "/ardu_aspeed" />
+        <remap from="/cmd_vel" 	        to = "/cmd_vel" />
+    </node>
+
+</launch>
