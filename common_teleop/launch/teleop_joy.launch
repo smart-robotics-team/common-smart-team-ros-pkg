@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<launch>
+    <node name="joy" pkg="joy" type="joy_node" output="screen" />
+
+    <node name="common_teleop" pkg="common_teleop" type="teleop_joy" output="screen" >
+        <param name="axis_linear" value="1" />
+        <param name="axis_angular" value="0" />
+        <param name="scale_angular" value="1.0" />
+        <param name="scale_linear" value="2.0" />
+
+
+        <remap from="/joy" to="/joy" />
+        
+        <remap from="/cmd_vel" to="/cmd_vel" />
+        <remap from="/speed" to="/TELEOP/speed" />
+        <remap from="/aspeed" to="/TELEOP/aspeed" />
+    </node>
+
+    <node pkg="topic_tools" type="throttle" name="teltop2ardu_speed_relay" output="screen" args="messages /TELEOP/speed 10 /ardu_speed" />
+    <node pkg="topic_tools" type="throttle" name="teltop2ardu_aspeed_relay" output="screen" args="messages /TELEOP/aspeed 10 /ardu_aspeed" />
+
+</launch>
