@@ -94,6 +94,7 @@ class TrajectoryManager
 		void pauseCallback(const std_msgs::Empty::ConstPtr & pose);
 		void resumeCallback(const std_msgs::Empty::ConstPtr & pose);
 		void computePointHead(nav_msgs::Path& path);
+		void computePointZdirection(nav_msgs::Path& path, double value);
 		void computePath(void);
 		void planThread(void);
 		void publishPath(void);
@@ -508,6 +509,18 @@ void TrajectoryManager::computePointHead(nav_msgs::Path& path)
 	}
 }
 
+/**
+ *    Compute a Z for each point
+ *    of the track
+ */
+void TrajectoryManager::computePointZdirection(nav_msgs::Path& path, double value)
+{
+	for(int i = 0; i < path.poses.size(); ++i)
+	{
+		path.poses[i].pose.position.z = value;
+	}
+}
+
 void TrajectoryManager::computePath(void)
 {
 	std::vector<geometry_msgs::PoseStamped> global_plan;
@@ -538,6 +551,8 @@ void TrajectoryManager::computePath(void)
 	//if(req.start.header.frame_id == "")
 	tf::poseStampedTFToMsg(global_pose, start);
 	//start = current_pose;
+	//start.pose.position.z = 1.0;
+	//final_pose.pose.position.z = 1.0;
 	current_pose = start;
 
 	//costmap_2d::Costmap2D* pCostmap = planner_costmap_->getCostmap();
@@ -567,6 +582,9 @@ void TrajectoryManager::computePath(void)
 	*/
 	// lock
 	my_path = tmp_path;
+	computePointHead(my_path);
+	TrajectoryManager::computePointZdirection(my_path, 1.0);
+
 	// unlock
 
 	if( action_goal == 1 ) {

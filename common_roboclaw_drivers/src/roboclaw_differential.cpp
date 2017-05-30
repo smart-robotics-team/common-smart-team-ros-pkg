@@ -115,6 +115,7 @@ class RoboClaw
         double _ang_coeff;
 
         int _motor1_side, _motor2_side;
+	bool _inverted_angular_rotation;
 };
 
 
@@ -140,6 +141,8 @@ RoboClaw::RoboClaw()
 
     nhp.param<int>("motor1_side", _motor1_side, 1);
     nhp.param<int>("motor2_side", _motor2_side, 1);
+
+    nhp.param<bool>("inverted_angular_rotation", _inverted_angular_rotation, false);
 
     ros::NodeHandle nhe("");
 
@@ -230,7 +233,14 @@ void RoboClaw::angularSpeedCallback(const std_msgs::Float32::ConstPtr& msg)
     double speed_motor1;
     double speed_motor2;
 
-    _angular_value = msg->data * _ang_coeff;
+    if(_inverted_angular_rotation)
+    {
+        _angular_value = -msg->data * _ang_coeff;
+    }
+    else
+    {
+        _angular_value = msg->data * _ang_coeff;
+    }
 
     speed_motor1 = _linear_value - _angular_value;
     speed_motor2 = _linear_value + _angular_value;
@@ -244,7 +254,14 @@ void RoboClaw::twistCallback(const geometry_msgs::Twist::ConstPtr& msg)
     double speed_motor2;
 
     _linear_value = msg->linear.x * _lin_coeff;
-    _angular_value = msg->angular.z * _ang_coeff;
+    if(_inverted_angular_rotation)
+    {
+        _angular_value = -msg->angular.z * _ang_coeff;
+    }
+    else
+    {
+        _angular_value = msg->angular.z * _ang_coeff;
+    }
 
     speed_motor1 = _linear_value - _angular_value;
     speed_motor2 = _linear_value + _angular_value;
