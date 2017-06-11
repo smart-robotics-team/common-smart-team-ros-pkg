@@ -134,6 +134,7 @@ include_directories(
 
 ## Declare a C++ executable
 add_executable(eurobot_timer_manager src/eurobot_timer_manager.cpp)
+add_executable(robot_voice src/robot_voice.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
@@ -141,6 +142,9 @@ add_dependencies(eurobot_timer_manager ${${PROJECT_NAME}_EXPORTED_TARGETS} ${cat
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(eurobot_timer_manager
+  ${catkin_LIBRARIES}
+)
+target_link_libraries(robot_voice
   ${catkin_LIBRARIES}
 )
 
