@@ -134,6 +134,7 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 add_executable(roboclaw_differential src/roboclaw_differential.cpp)
+add_executable(roboclaw_four_wheels_holonomic src/roboclaw_four_wheels_holonomic.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -144,9 +145,13 @@ add_executable(roboclaw_differential src/roboclaw_differential.cpp)
 ## Add cmake target dependencies of the executable
 ## same as for the library above
 add_dependencies(roboclaw_differential ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(roboclaw_four_wheels_holonomic ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(roboclaw_differential
+  ${catkin_LIBRARIES}
+)
+target_link_libraries(roboclaw_four_wheels_holonomic
   ${catkin_LIBRARIES}
 )
 
